@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TuboScatola", "TuboScatola\TuboScatola.vbproj", "{0323C3E1-6C4A-466A-B3BE-A125849ED988}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0323C3E1-6C4A-466A-B3BE-A125849ED988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0323C3E1-6C4A-466A-B3BE-A125849ED988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0323C3E1-6C4A-466A-B3BE-A125849ED988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0323C3E1-6C4A-466A-B3BE-A125849ED988}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41CB87DF-ED9D-4192-AFF1-BA69D2BB0BEC}
+	EndGlobalSection
+EndGlobal
