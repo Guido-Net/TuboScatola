@@ -536,7 +536,7 @@ Partial Class FormScatola
         DivisorioScatolaTextBox.Location = New Point(135, 114)
         DivisorioScatolaTextBox.Name = "DivisorioScatolaTextBox"
         DivisorioScatolaTextBox.Size = New Size(111, 23)
-        DivisorioScatolaTextBox.TabIndex = 20
+        DivisorioScatolaTextBox.TabIndex = 8
         ' 
         ' VolumeTotaleTextBox
         ' 
