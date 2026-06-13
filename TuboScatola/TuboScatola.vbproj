@@ -81,6 +81,7 @@
   </ItemGroup>
 
   <ItemGroup>
+  
     <None Update="DataSetScatole.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetScatole.Designer.vb</LastGenOutput>

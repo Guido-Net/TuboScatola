@@ -8,7 +8,9 @@ Public Class FormScatola
     Private IDCorrente As Integer = 0
 
     ' Percorso del database
-    Private stringaConnessione As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='I:\VisualStudio 2022\Progetto TuboScatola\TuboScatola\TuboScatola\DatabaseImpianti.mdf';Integrated Security=True;Encrypt=False"
+    '  Private stringaConnessione As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='I:\VisualStudio 2022\Progetto TuboScatola\TuboScatola\TuboScatola\DatabaseImpianti.mdf';Integrated Security=True;Encrypt=False"
+    ' Private stringaConnessione As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DatabaseImpianti.mdf;Integrated Security=True;Encrypt=False"
+    Private stringaConnessione As String = ""
 
     ' Funzione salvagente per trasformare il testo in numero decimale in modo sicuro
     Private Function ConvertiInDecimale(testo As String) As Decimal
@@ -192,8 +194,35 @@ Public Class FormScatola
 
     ' Per far apparire i dati appena si apre il form
     Private Sub FormScatola_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CaricaDatiGriglia()
-        NotificaScatolaToolStripStatusLabel.Text = "Pronto."
+        Try
+            Dim cartellaEseguibile As String = Application.StartupPath
+            Dim percorsoDatabase As String = ""
+
+            ' 1. DEFINIZIONE PERCORSO IN MODALITÀ SVILUPPO (PC GUIDO)
+            ' Se siamo dentro Visual Studio, andiamo a puntare direttamente alla cartella principale del progetto
+            If cartellaEseguibile.Contains("bin") Then
+                Dim percorsoProgettoPrincipale As String = "I:\VisualStudio 2022\Progetto TuboScatola\TuboScatola\TuboScatola"
+                percorsoDatabase = System.IO.Path.Combine(percorsoProgettoPrincipale, "DatabaseImpianti.mdf")
+            Else
+                ' 2. DEFINIZIONE PERCORSO IN MODALITÀ DISTRIBUZIONE (PC CLIENTE)
+                ' Quando il programma sarà installato, il DB sarà nella stessa cartella dell'eseguibile (.exe)
+                percorsoDatabase = System.IO.Path.Combine(cartellaEseguibile, "DatabaseImpianti.mdf")
+            End If
+
+            ' Configurazione della DataDirectory in memoria per il sistema
+            Dim cartellaDelFile As String = System.IO.Path.GetDirectoryName(percorsoDatabase)
+            AppDomain.CurrentDomain.SetData("DataDirectory", cartellaDelFile)
+
+            ' Costruzione stringa di connessione dinamica
+            stringaConnessione = $"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={percorsoDatabase};Integrated Security=True;Encrypt=False"
+
+            ' Caricamento dei dati nella griglia
+            CaricaDatiGriglia()
+            NotificaScatolaToolStripStatusLabel.Text = "Pronto. Connessione database eseguita con successo."
+
+        Catch ex As Exception
+            MessageBox.Show("Errore durante l'inizializzazione del database: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     ' --- CARICAMENTO DEI DATI DALLA GRIGLIA AL FORM (AGGIORNATO) ---
@@ -374,5 +403,182 @@ Public Class FormScatola
 
         ' 4. Apri
         frm.ShowDialog()
+    End Sub
+
+    Private Sub ImportaDBScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles ImportaDBScatolaToolStripButton.Click
+        Me.ImportaDatiScatole()
+    End Sub
+    Public Sub ImportaDatiScatole()
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "File XML (*.xml)|*.xml"
+        openFileDialog.Title = "Seleziona il file XML delle Scatole da importare"
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                ' 1. Leggiamo prima i dati dal file XML in una DataTable temporanea
+                Dim tabellaXml As New DataTable()
+                tabellaXml.ReadXml(openFileDialog.FileName)
+
+                ' Verifichiamo che il file XML non sia vuoto
+                If tabellaXml.Rows.Count = 0 Then
+                    MessageBox.Show("Il file XML selezionato non contiene record.", "Avviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                End If
+
+                ' 2. Apriamo la connessione al database reale utilizzando una Transazione
+                Using connessione As New Microsoft.Data.SqlClient.SqlConnection(stringaConnessione)
+                    connessione.Open()
+
+                    Using transazione As Microsoft.Data.SqlClient.SqlTransaction = connessione.BeginTransaction()
+                        Try
+                            ' 3. Pulizia fisica (Tabula Rasa) della tabella nel database
+                            Dim queryDelete As String = "DELETE FROM LibScatole"
+                            Using comandoDelete As New Microsoft.Data.SqlClient.SqlCommand(queryDelete, connessione, transazione)
+                                comandoDelete.ExecuteNonQuery()
+                            End Using
+
+                            ' 4. Predisponiamo il comando di inserimento con i parametri corrispondenti ai tuoi campi del DB
+                            Dim queryInsert As String = "INSERT INTO LibScatole (Marca, CodiceScatola, Posa, Larghezza, Altezza, Profondita, ForiPosteriori, SettoreLargSopraSotto, SettoreAltSopraSotto, SettoreLargLaterali, SettoreAltLaterali, DivisorioScatola, Note, VolumeTotale, VolumeScomparto, AreaUtileSS, AreaUtileLaterale) " &
+                                                   "VALUES (@marca, @codice, @tipo, @larg, @alt, @prof, @fori, @largSS, @altSS, @largLat, @altLat, @divisori, @note, @volTot, @volScomp, @areaSS, @areaLat)"
+
+                            Using comandoInsert As New Microsoft.Data.SqlClient.SqlCommand(queryInsert, connessione, transazione)
+
+                                ' Ciclo su ogni riga letta dal file XML per scriverla nel database fisico
+                                For Each rigaXml As DataRow In tabellaXml.Rows
+                                    comandoInsert.Parameters.Clear()
+
+                                    ' Passiamo i parametri controllando che non siano DbNull nel file XML
+                                    comandoInsert.Parameters.AddWithValue("@marca", If(rigaXml.Table.Columns.Contains("Marca"), rigaXml("Marca"), DBNull.Value))
+                                    comandoInsert.Parameters.AddWithValue("@codice", If(rigaXml.Table.Columns.Contains("CodiceScatola"), rigaXml("CodiceScatola"), DBNull.Value))
+                                    comandoInsert.Parameters.AddWithValue("@tipo", If(rigaXml.Table.Columns.Contains("Posa"), rigaXml("Posa"), DBNull.Value))
+
+                                    comandoInsert.Parameters.AddWithValue("@larg", If(rigaXml.Table.Columns.Contains("Larghezza"), rigaXml("Larghezza"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@alt", If(rigaXml.Table.Columns.Contains("Altezza"), rigaXml("Altezza"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@prof", If(rigaXml.Table.Columns.Contains("Profondita"), rigaXml("Profondita"), 0))
+
+                                    comandoInsert.Parameters.AddWithValue("@fori", If(rigaXml.Table.Columns.Contains("ForiPosteriori"), rigaXml("ForiPosteriori"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@largSS", If(rigaXml.Table.Columns.Contains("SettoreLargSopraSotto"), rigaXml("SettoreLargSopraSotto"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@altSS", If(rigaXml.Table.Columns.Contains("SettoreAltSopraSotto"), rigaXml("SettoreAltSopraSotto"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@largLat", If(rigaXml.Table.Columns.Contains("SettoreLargLaterali"), rigaXml("SettoreLargLaterali"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@altLat", If(rigaXml.Table.Columns.Contains("SettoreAltLaterali"), rigaXml("SettoreAltLaterali"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@divisori", If(rigaXml.Table.Columns.Contains("DivisorioScatola"), rigaXml("DivisorioScatola"), 0))
+
+                                    comandoInsert.Parameters.AddWithValue("@note", If(rigaXml.Table.Columns.Contains("Note"), rigaXml("Note"), DBNull.Value))
+
+                                    comandoInsert.Parameters.AddWithValue("@volTot", If(rigaXml.Table.Columns.Contains("VolumeTotale"), rigaXml("VolumeTotale"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@volScomp", If(rigaXml.Table.Columns.Contains("VolumeScomparto"), rigaXml("VolumeScomparto"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@areaSS", If(rigaXml.Table.Columns.Contains("AreaUtileSS"), rigaXml("AreaUtileSS"), 0))
+                                    comandoInsert.Parameters.AddWithValue("@areaLat", If(rigaXml.Table.Columns.Contains("AreaUtileLaterale"), rigaXml("AreaUtileLaterale"), 0))
+
+                                    comandoInsert.ExecuteNonQuery()
+                                Next
+                            End Using
+
+                            ' 5. Se tutto è andato a buon fine, confermiamo le modifiche sul database
+                            transazione.Commit()
+
+                            NotificaScatolaToolStripStatusLabel.Text = "Database Scatole importato con successo!"
+                            MessageBox.Show("Importazione completata con successo!", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                            ' 6. Ricarichiamo la griglia del form per mostrare subito i nuovi dati a video
+                            CaricaDatiGriglia()
+
+                            ' Ripristiniamo lo stato della form forzando la pressione del tasto Nuovo
+                            NuovoScatolaToolStripButton.PerformClick()
+
+                        Catch ex As Exception
+                            ' Se si verifica un qualsiasi errore durante i cicli di inserimento, annulliamo TUTTO
+                            transazione.Rollback()
+                            Throw ex ' Rilancia l'eccezione al blocco Catch esterno
+                        End Try
+                    End Using
+                End Using
+
+            Catch ex As Exception
+                MessageBox.Show($"Errore durante l'importazione dei dati nel DB: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub EsportaDBScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles EsportaDBScatolaToolStripButton.Click
+        Me.EsportaDatiScatole()
+    End Sub
+    Public Sub EsportaDatiScatole()
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "File XML (*.xml)|*.xml"
+        saveDialog.Title = "Esporta database Scatole"
+        saveDialog.FileName = "BackupScatole.xml"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                ' Verifichiamo che la griglia contenga effettivamente dei dati da esportare
+                If LibScatolaDataGridView.DataSource IsNot Nothing Then
+                    Dim tabellaDati As DataTable = Nothing
+
+                    ' Estraiamo la DataTable in modo sicuro in base a come è configurata la griglia
+                    If TypeOf LibScatolaDataGridView.DataSource Is DataTable Then
+                        tabellaDati = CType(LibScatolaDataGridView.DataSource, DataTable)
+                    ElseIf TypeOf LibScatolaDataGridView.DataSource Is BindingSource Then
+                        Dim bs As BindingSource = CType(LibScatolaDataGridView.DataSource, BindingSource)
+                        tabellaDati = CType(bs.DataSource, DataTable)
+                    End If
+
+                    ' Se abbiamo trovato la tabella con i dati, la salviamo in formato XML
+                    If tabellaDati IsNot Nothing Then
+                        ' Assegniamo un nome alla tabella prima del salvataggio (evita errori XML)
+                        tabellaDati.TableName = "LibScatole"
+                        tabellaDati.WriteXml(saveDialog.FileName, XmlWriteMode.WriteSchema)
+
+                        MessageBox.Show("Esportazione completata con successo!", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Impossibile recuperare i dati dalla griglia.", "Avviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
+                Else
+                    MessageBox.Show("Nessun dato presente nella griglia da esportare.", "Avviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show($"Errore durante l'esportazione: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub EliminaDBScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles EliminaDBScatolaToolStripButton.Click
+        Me.SvuotaDatabaseCompleto()
+    End Sub
+    Public Sub SvuotaDatabaseCompleto()
+        ' Chiediamo una doppia conferma all'utente prima di distruggere tutti i dati
+        Dim primaConferma As DialogResult = MessageBox.Show("Stai per cancellare DEFINITIVAMENTE tutte le scatole dal database. Vuoi continuare?", "ATTENZIONE - PULIZIA TOTALE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        If primaConferma = DialogResult.Yes Then
+            Dim secondaConferma As DialogResult = MessageBox.Show("Sei veramente sicuro? Questa operazione non è annullabile e svuoterà l'intero archivio.", "CONFERMA CRITICA", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            If secondaConferma = DialogResult.Yes Then
+                Try
+                    Using connessione As New Microsoft.Data.SqlClient.SqlConnection(stringaConnessione)
+                        connessione.Open()
+
+                        ' Comando SQL per fare tabula rasa della tabella
+                        Dim querySvuota As String = "DELETE FROM LibScatole"
+
+                        Using comando As New Microsoft.Data.SqlClient.SqlCommand(querySvuota, connessione)
+                            comando.ExecuteNonQuery()
+                        End Using
+                    End Using
+
+                    NotificaScatolaToolStripStatusLabel.Text = "Database completamente svuotato."
+                    MessageBox.Show("Il database è stato svuotato con successo! Tutti i dati sono stati eliminati.", "Pulizia Completata", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Aggiorniamo la griglia (che ora risulterà completamente vuota)
+                    CaricaDatiGriglia()
+
+                    ' Resettiamo lo stato del form
+                    NuovoScatolaToolStripButton.PerformClick()
+
+                Catch ex As Exception
+                    MessageBox.Show("Errore durante la pulizia del database: " & vbCrLf & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
     End Sub
 End Class
