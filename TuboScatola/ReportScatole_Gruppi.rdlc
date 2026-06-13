@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>15.14012cm</Width>
+              <Width>10.97101cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>7.63856cm</Height>
+              <Height>7.42689cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -21,27 +21,27 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.44603cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.76326cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.79071cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.62687cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.79917cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.865cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.6cm</Height>
+                                <Height>1.02333cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -53,10 +53,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Codice Scatola</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -65,12 +71,14 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -83,10 +91,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Posa</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox6</rd:DefaultName>
@@ -95,6 +109,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -113,10 +128,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Larghezza</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox8</rd:DefaultName>
@@ -125,6 +146,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -143,10 +165,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Altezza</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -155,6 +183,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -173,10 +202,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Profondita</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -185,6 +220,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -203,10 +239,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Fori Posteriori</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -215,6 +257,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -238,10 +281,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!CodiceScatola.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>CodiceScatola</rd:DefaultName>
@@ -268,10 +315,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Posa.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Posa</rd:DefaultName>
@@ -298,10 +349,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Larghezza.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Larghezza</rd:DefaultName>
@@ -328,10 +383,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Altezza.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Altezza</rd:DefaultName>
@@ -358,10 +417,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Profondita.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Profondita</rd:DefaultName>
@@ -388,10 +451,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!ForiPosteriori.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>ForiPosteriori</rd:DefaultName>
@@ -433,39 +500,40 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>dsScatoleStampa</DataSetName>
-                          <Height>1.2cm</Height>
-                          <Width>15cm</Width>
+                          <Height>1.62333cm</Height>
+                          <Width>10.29104cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </Tablix>
                         <Tablix Name="Tablix1">
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.81929cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>2.31916cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.55668cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>2.01867cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.49966cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>1.48167cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>1.04979cm</Height>
+                                <Height>1.84354cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -477,7 +545,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Fori Posteriori</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -489,6 +561,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -506,8 +579,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Settore Larg Sopra Sotto</Value>
-                                                <Style />
+                                                <Value>Settore Larghezza Sopra Sotto</Value>
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -519,6 +596,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -536,8 +614,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Settore Alt Sopra Sotto</Value>
-                                                <Style />
+                                                <Value>Settore Alt ezza Sopra Sotto</Value>
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -549,6 +631,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -566,8 +649,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Settore Larg Laterali</Value>
-                                                <Style />
+                                                <Value>Settore Larghezza Laterali</Value>
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -579,6 +666,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -596,8 +684,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Settore Alt Laterali</Value>
-                                                <Style />
+                                                <Value>Settore Alt ezza Laterali</Value>
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -609,6 +701,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -627,7 +720,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Divisorio Scatola</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -639,6 +736,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -662,10 +760,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!ForiPosteriori.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>ForiPosteriori1</rd:DefaultName>
@@ -692,10 +794,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SettoreLargSopraSotto.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>SettoreLargSopraSotto</rd:DefaultName>
@@ -722,10 +828,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SettoreAltSopraSotto.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>SettoreAltSopraSotto</rd:DefaultName>
@@ -752,10 +862,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SettoreLargLaterali.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>SettoreLargLaterali</rd:DefaultName>
@@ -782,10 +896,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!SettoreAltLaterali.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>SettoreAltLaterali</rd:DefaultName>
@@ -812,10 +930,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!DivisorioScatola.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>DivisorioScatola</rd:DefaultName>
@@ -857,27 +979,28 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>dsScatoleStampa</DataSetName>
-                          <Top>1.27056cm</Top>
+                          <Top>1.76444cm</Top>
                           <Left>0cm</Left>
-                          <Height>1.64979cm</Height>
-                          <Width>15cm</Width>
+                          <Height>2.44354cm</Height>
+                          <Width>10.69512cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </Tablix>
                         <Tablix Name="Tablix2">
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>15cm</Width>
+                                <Width>10.50271cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.6cm</Height>
+                                <Height>0.49643cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -889,10 +1012,16 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Note</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -901,6 +1030,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -912,7 +1042,7 @@
                                 </TablixCells>
                               </TablixRow>
                               <TablixRow>
-                                <Height>0.6cm</Height>
+                                <Height>0.49643cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -924,7 +1054,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Note.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -964,15 +1096,16 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>dsScatoleStampa</DataSetName>
-                          <Top>3.36585cm</Top>
+                          <Top>4.36674cm</Top>
                           <Left>0cm</Left>
-                          <Height>1.2cm</Height>
-                          <Width>15cm</Width>
+                          <Height>0.99287cm</Height>
+                          <Width>10.50271cm</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </Tablix>
                         <Tablix Name="Tablix5">
@@ -1005,7 +1138,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Volume Totale</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -1017,6 +1154,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1035,7 +1173,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Volume Scomparto</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -1047,6 +1189,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1065,7 +1208,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Area Utile Sopra Sotto</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -1077,6 +1224,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1095,7 +1243,11 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Area Utile Laterale</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>Blue</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -1107,6 +1259,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1130,10 +1283,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!VolumeTotale.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>VolumeTotale</rd:DefaultName>
@@ -1160,10 +1317,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!VolumeScomparto.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>VolumeScomparto</rd:DefaultName>
@@ -1190,10 +1351,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!AreaUtileSS.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>AreaUtileSS</rd:DefaultName>
@@ -1220,10 +1385,14 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!AreaUtileLaterale.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontSize>9pt</FontSize>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>AreaUtileLaterale</rd:DefaultName>
@@ -1263,8 +1432,8 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>dsScatoleStampa</DataSetName>
-                          <Top>4.74224cm</Top>
-                          <Left>3.42604cm</Left>
+                          <Top>5.53599cm</Top>
+                          <Left>1.52104cm</Left>
                           <Height>1.75562cm</Height>
                           <Width>7.5cm</Width>
                           <ZIndex>3</ZIndex>
@@ -1272,6 +1441,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <FontSize>9pt</FontSize>
                           </Style>
                         </Tablix>
                       </ReportItems>
@@ -1307,7 +1477,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.59261cm</Size>
+                <Size>1.53427cm</Size>
                 <CellContents>
                   <Textbox Name="Marca">
                     <CanGrow>true</CanGrow>
@@ -1339,15 +1509,62 @@
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
-                <TablixMember />
+                <TablixMember>
+                  <Group Name="CodiceScatola">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!CodiceScatola.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!CodiceScatola.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1.78562cm</Size>
+                    <CellContents>
+                      <Textbox Name="CodiceScatola1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!CodiceScatola.Value</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>CodiceScatola1</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsScatoleStampa</DataSetName>
         <Top>0.17639cm</Top>
-        <Height>7.63856cm</Height>
-        <Width>17.73273cm</Width>
+        <Left>0.43849cm</Left>
+        <Height>7.42689cm</Height>
+        <Width>14.2909cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1355,49 +1572,20 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.30208in</Height>
+    <Height>3.08333in</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.06634in</Width>
+  <Width>5.84064in</Width>
   <Page>
     <PageHeader>
-      <Height>2.75167cm</Height>
+      <Height>1.98437cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="ReportName">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!ReportName</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ReportName</rd:DefaultName>
-          <Top>1.71662cm</Top>
-          <Left>2.48391cm</Left>
-          <Height>0.6cm</Height>
-          <Width>8.85cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="ExecutionTime">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1417,16 +1605,51 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.71662cm</Top>
-          <Left>13.77752cm</Left>
+          <Top>0.26141cm</Top>
+          <Left>11.87414cm</Left>
           <Height>0.41479cm</Height>
-          <Width>3.95521cm</Width>
-          <ZIndex>1</ZIndex>
+          <Width>2.26188cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
             <VerticalAlign>Top</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox46">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Report Raggruppamento Scatole nel Data Base.</Value>
+                  <Style>
+                    <FontSize>15pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>Blue</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox46</rd:DefaultName>
+          <Top>0.26141cm</Top>
+          <Left>0.58339cm</Left>
+          <Height>1.47312cm</Height>
+          <Width>10cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1441,7 +1664,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.20537cm</Height>
+      <Height>0.70266cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1461,8 +1684,8 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>0.17639cm</Top>
-          <Left>16.76794cm</Left>
-          <Height>0.6cm</Height>
+          <Left>13.48873cm</Left>
+          <Height>0.40597cm</Height>
           <Width>0.96479cm</Width>
           <Style>
             <Border>
@@ -1490,8 +1713,8 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.17639cm</Top>
-          <Left>14.78357cm</Left>
-          <Height>0.6cm</Height>
+          <Left>11.50435cm</Left>
+          <Height>0.40597cm</Height>
           <Width>1.01833cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -1522,8 +1745,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
           <Top>0.17639cm</Top>
-          <Left>15.92127cm</Left>
-          <Height>0.6cm</Height>
+          <Left>12.64206cm</Left>
+          <Height>0.40597cm</Height>
           <Width>0.61736cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
