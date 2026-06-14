@@ -329,8 +329,10 @@ Partial Class FormScatola
         ' 
         ' NotificaScatolaToolStripStatusLabel
         ' 
+        NotificaScatolaToolStripStatusLabel.Image = CType(resources.GetObject("NotificaScatolaToolStripStatusLabel.Image"), Image)
+        NotificaScatolaToolStripStatusLabel.ImageAlign = ContentAlignment.MiddleLeft
         NotificaScatolaToolStripStatusLabel.Name = "NotificaScatolaToolStripStatusLabel"
-        NotificaScatolaToolStripStatusLabel.Size = New Size(194, 17)
+        NotificaScatolaToolStripStatusLabel.Size = New Size(210, 17)
         NotificaScatolaToolStripStatusLabel.Text = "NotificaScatolaToolStripStatusLabel"
         ' 
         ' Label1
