@@ -124,6 +124,7 @@ Partial Class FormScatola
         InizioScatolaToolStripButton.Name = "InizioScatolaToolStripButton"
         InizioScatolaToolStripButton.Size = New Size(23, 22)
         InizioScatolaToolStripButton.Text = "ToolStripButton1"
+        InizioScatolaToolStripButton.ToolTipText = "Vai all'inizio"
         ' 
         ' IndietroScatolaToolStripButton
         ' 
@@ -133,12 +134,13 @@ Partial Class FormScatola
         IndietroScatolaToolStripButton.Name = "IndietroScatolaToolStripButton"
         IndietroScatolaToolStripButton.Size = New Size(23, 22)
         IndietroScatolaToolStripButton.Text = "ToolStripButton2"
+        IndietroScatolaToolStripButton.ToolTipText = "Vai indietro"
         ' 
         ' RecordToolStripLabel
         ' 
         RecordToolStripLabel.Name = "RecordToolStripLabel"
         RecordToolStripLabel.Size = New Size(88, 22)
-        RecordToolStripLabel.Text = "ToolStripLabel1"
+        RecordToolStripLabel.Text = "- Navigazione -"
         ' 
         ' AvantiScatolaToolStripButton
         ' 
@@ -148,6 +150,7 @@ Partial Class FormScatola
         AvantiScatolaToolStripButton.Name = "AvantiScatolaToolStripButton"
         AvantiScatolaToolStripButton.Size = New Size(23, 22)
         AvantiScatolaToolStripButton.Text = "ToolStripButton3"
+        AvantiScatolaToolStripButton.ToolTipText = "Vai avanti"
         ' 
         ' FineScatolaToolStripButton
         ' 
@@ -157,6 +160,7 @@ Partial Class FormScatola
         FineScatolaToolStripButton.Name = "FineScatolaToolStripButton"
         FineScatolaToolStripButton.Size = New Size(23, 22)
         FineScatolaToolStripButton.Text = "ToolStripButton4"
+        FineScatolaToolStripButton.ToolTipText = "Vai alla fine"
         ' 
         ' ToolStripSeparator1
         ' 
@@ -171,6 +175,7 @@ Partial Class FormScatola
         NuovoScatolaToolStripButton.Name = "NuovoScatolaToolStripButton"
         NuovoScatolaToolStripButton.Size = New Size(23, 22)
         NuovoScatolaToolStripButton.Text = "ToolStripButton5"
+        NuovoScatolaToolStripButton.ToolTipText = "Nuovo record"
         ' 
         ' SalvaScatolaToolStripButton
         ' 
@@ -180,6 +185,7 @@ Partial Class FormScatola
         SalvaScatolaToolStripButton.Name = "SalvaScatolaToolStripButton"
         SalvaScatolaToolStripButton.Size = New Size(23, 22)
         SalvaScatolaToolStripButton.Text = "ToolStripButton6"
+        SalvaScatolaToolStripButton.ToolTipText = "Salva dati"
         ' 
         ' ModificaScatolaToolStripButton
         ' 
@@ -189,6 +195,7 @@ Partial Class FormScatola
         ModificaScatolaToolStripButton.Name = "ModificaScatolaToolStripButton"
         ModificaScatolaToolStripButton.Size = New Size(23, 22)
         ModificaScatolaToolStripButton.Text = "ToolStripButton8"
+        ModificaScatolaToolStripButton.ToolTipText = "Modifica dati selezionati"
         ' 
         ' EliminaScatolaToolStripButton
         ' 
@@ -198,6 +205,7 @@ Partial Class FormScatola
         EliminaScatolaToolStripButton.Name = "EliminaScatolaToolStripButton"
         EliminaScatolaToolStripButton.Size = New Size(23, 22)
         EliminaScatolaToolStripButton.Text = "ToolStripButton7"
+        EliminaScatolaToolStripButton.ToolTipText = "Elimina dati selezionati"
         ' 
         ' ToolStripSeparator2
         ' 
@@ -212,6 +220,7 @@ Partial Class FormScatola
         RicercaScatolaToolStripButton.Name = "RicercaScatolaToolStripButton"
         RicercaScatolaToolStripButton.Size = New Size(23, 22)
         RicercaScatolaToolStripButton.Text = "ToolStripButton9"
+        RicercaScatolaToolStripButton.ToolTipText = "Ricerca dati"
         ' 
         ' AnnullaRicercaScatolaToolStripButton
         ' 
@@ -221,6 +230,7 @@ Partial Class FormScatola
         AnnullaRicercaScatolaToolStripButton.Name = "AnnullaRicercaScatolaToolStripButton"
         AnnullaRicercaScatolaToolStripButton.Size = New Size(23, 22)
         AnnullaRicercaScatolaToolStripButton.Text = "ToolStripButton10"
+        AnnullaRicercaScatolaToolStripButton.ToolTipText = "Annulla ricerca"
         ' 
         ' StampaScatolaToolStripButton
         ' 
@@ -231,18 +241,21 @@ Partial Class FormScatola
         StampaScatolaToolStripButton.Name = "StampaScatolaToolStripButton"
         StampaScatolaToolStripButton.Size = New Size(29, 22)
         StampaScatolaToolStripButton.Text = "ToolStripButton11"
+        StampaScatolaToolStripButton.ToolTipText = " "
         ' 
         ' StampaDaSelezioneToolStripMenuItem
         ' 
         StampaDaSelezioneToolStripMenuItem.Name = "StampaDaSelezioneToolStripMenuItem"
         StampaDaSelezioneToolStripMenuItem.Size = New Size(219, 22)
         StampaDaSelezioneToolStripMenuItem.Text = "Stampa Report da selezione"
+        StampaDaSelezioneToolStripMenuItem.ToolTipText = "Stampa Report dei dati Visualizzati"
         ' 
         ' StampaReportElementiToolStripMenuItem
         ' 
         StampaReportElementiToolStripMenuItem.Name = "StampaReportElementiToolStripMenuItem"
         StampaReportElementiToolStripMenuItem.Size = New Size(219, 22)
         StampaReportElementiToolStripMenuItem.Text = "Stampa Report elemnti"
+        StampaReportElementiToolStripMenuItem.ToolTipText = "Stampa Report dei dati presenti nel Data Base"
         ' 
         ' ToolStripSeparator3
         ' 
@@ -257,6 +270,7 @@ Partial Class FormScatola
         EsportaDBScatolaToolStripButton.Name = "EsportaDBScatolaToolStripButton"
         EsportaDBScatolaToolStripButton.Size = New Size(23, 22)
         EsportaDBScatolaToolStripButton.Text = "ToolStripButton12"
+        EsportaDBScatolaToolStripButton.ToolTipText = "Esporta Data Base"
         ' 
         ' ImportaDBScatolaToolStripButton
         ' 
@@ -266,6 +280,7 @@ Partial Class FormScatola
         ImportaDBScatolaToolStripButton.Name = "ImportaDBScatolaToolStripButton"
         ImportaDBScatolaToolStripButton.Size = New Size(23, 22)
         ImportaDBScatolaToolStripButton.Text = "ToolStripButton13"
+        ImportaDBScatolaToolStripButton.ToolTipText = "Importa Data Base"
         ' 
         ' EliminaDBScatolaToolStripButton
         ' 
@@ -275,6 +290,7 @@ Partial Class FormScatola
         EliminaDBScatolaToolStripButton.Name = "EliminaDBScatolaToolStripButton"
         EliminaDBScatolaToolStripButton.Size = New Size(23, 22)
         EliminaDBScatolaToolStripButton.Text = "ToolStripButton14"
+        EliminaDBScatolaToolStripButton.ToolTipText = "Ripulisci Data Base"
         ' 
         ' ToolStripSeparator4
         ' 
@@ -289,6 +305,7 @@ Partial Class FormScatola
         EsciScatolaToolStripButton.Name = "EsciScatolaToolStripButton"
         EsciScatolaToolStripButton.Size = New Size(23, 22)
         EsciScatolaToolStripButton.Text = "ToolStripButton15"
+        EsciScatolaToolStripButton.ToolTipText = "Chiudi finestra Scatola"
         ' 
         ' AiutoScatolaToolStripButton
         ' 
@@ -299,6 +316,7 @@ Partial Class FormScatola
         AiutoScatolaToolStripButton.Name = "AiutoScatolaToolStripButton"
         AiutoScatolaToolStripButton.Size = New Size(23, 22)
         AiutoScatolaToolStripButton.Text = "ToolStripButton16"
+        AiutoScatolaToolStripButton.ToolTipText = "Aiuto scatola"
         ' 
         ' NotificaScatolaStatusStrip
         ' 

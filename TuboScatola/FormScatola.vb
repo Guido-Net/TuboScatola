@@ -581,4 +581,9 @@ Public Class FormScatola
             End If
         End If
     End Sub
+
+    Private Sub EsciScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles EsciScatolaToolStripButton.Click
+        Me.Close()
+
+    End Sub
 End Class
