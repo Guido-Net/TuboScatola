@@ -2,8 +2,8 @@
 
 Public Class FormScatola
 
-
-
+    ' Variabile per capire se è stata selezionato un record
+    Public CellaSelezionata As Boolean
     ' Variabile per capire se stiamo creando una nuova scatola (0) o modificandone una esistente
     Private IDCorrente As Integer = 0
 
@@ -22,6 +22,70 @@ Public Class FormScatola
         Decimal.TryParse(testo.Replace(".", ","), valoreDecimale)
         Return valoreDecimale
     End Function
+    Public Sub DeselezionaLibScatolaDataGridView()
+        ' Deseleziona tutte le righe e le celle
+        LibScatolaDataGridView.ClearSelection()
+
+        ' Rimuove l'indicatore di cella attiva
+        LibScatolaDataGridView.CurrentCell = Nothing
+    End Sub
+    Public Sub SvuotaCampiScatola()
+        ' Svuotiamo tutti i campi di inserimento per l'utente
+        MarcaScatolaTextBox.Clear()
+        CodiceScatolaTextBox.Clear()
+        TipoPosaComboBox.SelectedIndex = -1 ' Deseleziona l'elemento corrente nella ComboBox
+
+        LarghezzaScatolaTextBox.Clear()
+        AltezzaScatolaTextBox.Clear()
+        ProfonditaScatolaTextBox.Clear()
+
+        ForiPosterioriTextBox.Clear()
+        SettLargSSTextBox.Clear()
+        SettAltSSTextBox.Clear()
+        SettLargLateraliTextBox.Clear()
+        SettAltLateraliTextBox.Clear()
+        DivisorioScatolaTextBox.Clear()
+        NoteScatolaTextBox.Clear()
+    End Sub
+    Public Sub AbilitaCampiScatola()
+        ' Abilitiamo tutti i campi di inserimento per l'utente
+        MarcaScatolaTextBox.ReadOnly = False
+        CodiceScatolaTextBox.ReadOnly = False
+        ' TipoPosaComboBox.SelectedIndex = -1 ' Deseleziona l'elemento corrente nella ComboBox
+        TipoPosaComboBox.Enabled = True
+
+        LarghezzaScatolaTextBox.ReadOnly = False
+        AltezzaScatolaTextBox.ReadOnly = False
+        ProfonditaScatolaTextBox.ReadOnly = False
+
+        ForiPosterioriTextBox.ReadOnly = False
+        SettLargSSTextBox.ReadOnly = False
+        SettAltSSTextBox.ReadOnly = False
+        SettLargLateraliTextBox.ReadOnly = False
+        SettAltLateraliTextBox.ReadOnly = False
+        DivisorioScatolaTextBox.ReadOnly = False
+        NoteScatolaTextBox.ReadOnly = False
+    End Sub
+    Public Sub DisabilitaCampiScatola()
+        ' Disabilita tutti i campi di inserimento per l'utente
+        MarcaScatolaTextBox.ReadOnly = True
+        CodiceScatolaTextBox.ReadOnly = True
+        'TipoPosaComboBox.SelectedIndex = -1 ' Deseleziona l'elemento corrente nella ComboBox
+        TipoPosaComboBox.Enabled = False
+
+        LarghezzaScatolaTextBox.ReadOnly = True
+        AltezzaScatolaTextBox.ReadOnly = True
+        ProfonditaScatolaTextBox.ReadOnly = True
+
+        ForiPosterioriTextBox.ReadOnly = True
+        SettLargSSTextBox.ReadOnly = True
+        SettAltSSTextBox.ReadOnly = True
+        SettLargLateraliTextBox.ReadOnly = True
+        SettAltLateraliTextBox.ReadOnly = True
+        DivisorioScatolaTextBox.ReadOnly = True
+        NoteScatolaTextBox.ReadOnly = True
+    End Sub
+
     ' Calcolo automatico di Volumi (cm³) e Aree (mm²)
     Private Sub CalcolaDatiInTempoReale(sender As Object, e As EventArgs) Handles LarghezzaScatolaTextBox.TextChanged, AltezzaScatolaTextBox.TextChanged, ProfonditaScatolaTextBox.TextChanged, DivisorioScatolaTextBox.TextChanged, SettLargSSTextBox.TextChanged, SettAltSSTextBox.TextChanged, SettLargLateraliTextBox.TextChanged, SettAltLateraliTextBox.TextChanged
 
@@ -61,22 +125,11 @@ Public Class FormScatola
         ' Impostiamo l'ID corrente a 0. Questo dice al pulsante Salva che stiamo creando un record NUOVO
         IDCorrente = 0
 
+        ' Abilitiamo tutti i campi di inserimento per l'utente
+        AbilitaCampiScatola()
+
         ' Svuotiamo tutti i campi di inserimento per l'utente
-        MarcaScatolaTextBox.Clear()
-        CodiceScatolaTextBox.Clear()
-        TipoPosaComboBox.SelectedIndex = -1 ' Deseleziona l'elemento corrente nella ComboBox
-
-        LarghezzaScatolaTextBox.Clear()
-        AltezzaScatolaTextBox.Clear()
-        ProfonditaScatolaTextBox.Clear()
-
-        ForiPosterioriTextBox.Clear()
-        SettLargSSTextBox.Clear()
-        SettAltSSTextBox.Clear()
-        SettLargLateraliTextBox.Clear()
-        SettAltLateraliTextBox.Clear()
-        DivisorioScatolaTextBox.Clear()
-        NoteScatolaTextBox.Clear()
+        SvuotaCampiScatola()
 
         ' Nota: I campi di calcolo (VolumeTotaleTextBox, ecc.) si azzereranno da soli 
         ' in automatico perché le TextBox delle dimensioni sono appena state svuotate,
@@ -84,9 +137,11 @@ Public Class FormScatola
 
         ' Aggiorniamo la barra di stato in basso per dare istruzioni all'utente
         NotificaScatolaToolStripStatusLabel.Text = "Inserimento nuova scatola... Compila i campi e premi Salva."
+        ' Aggiorniamo la barra di stato in basso per notificare l'azione selezionata
+        NotificaScatolaLabel.Text = "Nuova scatola.."
 
         ' Portiamo il cursore del mouse direttamente sulla prima casella utile
-        CodiceScatolaTextBox.Focus()
+        MarcaScatolaTextBox.Focus()
     End Sub
 
     ' Funzione salvagente per trasformare il testo in numero intero in modo sicuro
@@ -152,8 +207,13 @@ Public Class FormScatola
                 End Using
             End Using
 
+            ' Disabilita tutti i campi di inserimento per l'utente
+            DisabilitaCampiScatola()
+
             ' Notifica di successo nella barra in basso
             NotificaScatolaToolStripStatusLabel.Text = "Scatola '" & CodiceScatolaTextBox.Text & "' salvata con successo alle " & DateTime.Now.ToString("HH:mm:ss")
+            ' Aggiorniamo la barra di stato in basso per notificare l'azione selezionata
+            NotificaScatolaLabel.Text = "Salvato Record scatola.."
 
             ' Dopo aver salvato, ricarichiamo la griglia per vedere il nuovo dato
             CaricaDatiGriglia()
@@ -194,6 +254,7 @@ Public Class FormScatola
 
     ' Per far apparire i dati appena si apre il form
     Private Sub FormScatola_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Try
             Dim cartellaEseguibile As String = Application.StartupPath
             Dim percorsoDatabase As String = ""
@@ -220,6 +281,7 @@ Public Class FormScatola
             CaricaDatiGriglia()
             NotificaScatolaToolStripStatusLabel.Text = "Pronto. Connessione database eseguita con successo."
 
+            DeselezionaLibScatolaDataGridView()
         Catch ex As Exception
             MessageBox.Show("Errore durante l'inizializzazione del database: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -229,8 +291,9 @@ Public Class FormScatola
     Private Sub LibScatolaDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles LibScatolaDataGridView.CellClick
         ' Verifichiamo che l'utente abbia cliccato su una riga valida
         If e.RowIndex >= 0 Then
-            Dim rigaSelezionata As DataGridViewRow = LibScatolaDataGridView.Rows(e.RowIndex)
 
+            Dim rigaSelezionata As DataGridViewRow = LibScatolaDataGridView.Rows(e.RowIndex)
+            CellaSelezionata = True
             ' Recuperiamo l'ID univoco
             IDCorrente = Convert.ToInt32(rigaSelezionata.Cells("Id").Value)
 
@@ -255,6 +318,8 @@ Public Class FormScatola
 
             ' Aggiorniamo la barra di stato
             NotificaScatolaToolStripStatusLabel.Text = "Scatola selezionata: " & CodiceScatolaTextBox.Text
+            ' Aggiorniamo la barra di stato in basso per notificare l'azione selezionata
+            NotificaScatolaLabel.Text = "Record scatola selezionato.."
         End If
     End Sub
 
@@ -286,9 +351,12 @@ Public Class FormScatola
                 IDCorrente = 0 ' Resettiamo l'ID perché il record non esiste più
 
                 ' Svuotiamo il form per evitare confusione
+                ' Svuotiamo tutti i campi di inserimento per l'utente
+                SvuotaCampiScatola()
                 ' (Puoi richiamare la stessa logica del tasto Nuovo)
-                NuovoScatolaToolStripButton.PerformClick()
-
+                'NuovoScatolaToolStripButton.PerformClick()
+                ' Disabilita tutti i campi di inserimento per l'utente
+                DisabilitaCampiScatola()
                 ' Aggiorniamo la griglia
                 CaricaDatiGriglia()
 
@@ -297,7 +365,7 @@ Public Class FormScatola
             End Try
         End If
     End Sub
-    ' Da inserire dentro FormScatola.vb
+
     Public Sub FiltraGriglia(colonna As String, valore As String)
         ' Assicuriamoci che la griglia abbia dati
         If LibScatolaDataGridView.DataSource IsNot Nothing Then
@@ -322,6 +390,8 @@ Public Class FormScatola
 
         ' Lo mostriamo come finestra di dialogo (il resto del form resta bloccato finché non chiudi la ricerca)
         frmCerca.ShowDialog()
+        ' Disabilita tutti i campi di inserimento per l'utente
+        DisabilitaCampiScatola()
     End Sub
 
     ' --- RIPRISTINO DELLA GRIGLIA (ANNULLA RICERCA) ---
@@ -586,4 +656,18 @@ Public Class FormScatola
         Me.Close()
 
     End Sub
+
+    Private Sub ModificaScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles ModificaScatolaToolStripButton.Click
+        ' Verifichiamo che l'utente abbia cliccato su una riga valida
+        If CellaSelezionata = True Then
+            ' Abilitiamo tutti i campi di inserimento per l'utente
+            AbilitaCampiScatola()
+        Else
+            ' Disabilita tutti i campi di inserimento per l'utente
+            DisabilitaCampiScatola()
+            MessageBox.Show("Selezionare prima un capo dei record...", "Selezione campo record.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
 End Class

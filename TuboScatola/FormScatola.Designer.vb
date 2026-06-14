@@ -445,6 +445,7 @@ Partial Class FormScatola
         ' 
         MarcaScatolaTextBox.Location = New Point(18, 61)
         MarcaScatolaTextBox.Name = "MarcaScatolaTextBox"
+        MarcaScatolaTextBox.ReadOnly = True
         MarcaScatolaTextBox.Size = New Size(100, 23)
         MarcaScatolaTextBox.TabIndex = 1
         ' 
@@ -452,6 +453,7 @@ Partial Class FormScatola
         ' 
         CodiceScatolaTextBox.Location = New Point(131, 61)
         CodiceScatolaTextBox.Name = "CodiceScatolaTextBox"
+        CodiceScatolaTextBox.ReadOnly = True
         CodiceScatolaTextBox.Size = New Size(111, 23)
         CodiceScatolaTextBox.TabIndex = 2
         ' 
@@ -459,6 +461,7 @@ Partial Class FormScatola
         ' 
         LarghezzaScatolaTextBox.Location = New Point(439, 61)
         LarghezzaScatolaTextBox.Name = "LarghezzaScatolaTextBox"
+        LarghezzaScatolaTextBox.ReadOnly = True
         LarghezzaScatolaTextBox.Size = New Size(87, 23)
         LarghezzaScatolaTextBox.TabIndex = 4
         ' 
@@ -466,6 +469,7 @@ Partial Class FormScatola
         ' 
         AltezzaScatolaTextBox.Location = New Point(568, 61)
         AltezzaScatolaTextBox.Name = "AltezzaScatolaTextBox"
+        AltezzaScatolaTextBox.ReadOnly = True
         AltezzaScatolaTextBox.Size = New Size(100, 23)
         AltezzaScatolaTextBox.TabIndex = 5
         ' 
@@ -473,6 +477,7 @@ Partial Class FormScatola
         ' 
         ProfonditaScatolaTextBox.Location = New Point(695, 65)
         ProfonditaScatolaTextBox.Name = "ProfonditaScatolaTextBox"
+        ProfonditaScatolaTextBox.ReadOnly = True
         ProfonditaScatolaTextBox.Size = New Size(100, 23)
         ProfonditaScatolaTextBox.TabIndex = 6
         ' 
@@ -480,6 +485,7 @@ Partial Class FormScatola
         ' 
         ForiPosterioriTextBox.Location = New Point(18, 114)
         ForiPosterioriTextBox.Name = "ForiPosterioriTextBox"
+        ForiPosterioriTextBox.ReadOnly = True
         ForiPosterioriTextBox.Size = New Size(111, 23)
         ForiPosterioriTextBox.TabIndex = 7
         ' 
@@ -487,6 +493,7 @@ Partial Class FormScatola
         ' 
         SettLargSSTextBox.Location = New Point(275, 114)
         SettLargSSTextBox.Name = "SettLargSSTextBox"
+        SettLargSSTextBox.ReadOnly = True
         SettLargSSTextBox.Size = New Size(87, 23)
         SettLargSSTextBox.TabIndex = 9
         ' 
@@ -494,6 +501,7 @@ Partial Class FormScatola
         ' 
         SettAltSSTextBox.Location = New Point(439, 114)
         SettAltSSTextBox.Name = "SettAltSSTextBox"
+        SettAltSSTextBox.ReadOnly = True
         SettAltSSTextBox.Size = New Size(100, 23)
         SettAltSSTextBox.TabIndex = 10
         ' 
@@ -501,6 +509,7 @@ Partial Class FormScatola
         ' 
         SettLargLateraliTextBox.Location = New Point(568, 114)
         SettLargLateraliTextBox.Name = "SettLargLateraliTextBox"
+        SettLargLateraliTextBox.ReadOnly = True
         SettLargLateraliTextBox.Size = New Size(94, 23)
         SettLargLateraliTextBox.TabIndex = 11
         ' 
@@ -508,6 +517,7 @@ Partial Class FormScatola
         ' 
         SettAltLateraliTextBox.Location = New Point(695, 114)
         SettAltLateraliTextBox.Name = "SettAltLateraliTextBox"
+        SettAltLateraliTextBox.ReadOnly = True
         SettAltLateraliTextBox.Size = New Size(87, 23)
         SettAltLateraliTextBox.TabIndex = 12
         ' 
@@ -517,6 +527,7 @@ Partial Class FormScatola
         NoteScatolaTextBox.Location = New Point(18, 167)
         NoteScatolaTextBox.Multiline = True
         NoteScatolaTextBox.Name = "NoteScatolaTextBox"
+        NoteScatolaTextBox.ReadOnly = True
         NoteScatolaTextBox.ScrollBars = ScrollBars.Vertical
         NoteScatolaTextBox.Size = New Size(796, 47)
         NoteScatolaTextBox.TabIndex = 13
@@ -527,15 +538,17 @@ Partial Class FormScatola
         LibScatolaDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         LibScatolaDataGridView.Location = New Point(12, 312)
         LibScatolaDataGridView.Name = "LibScatolaDataGridView"
+        LibScatolaDataGridView.ReadOnly = True
         LibScatolaDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         LibScatolaDataGridView.Size = New Size(802, 160)
         LibScatolaDataGridView.TabIndex = 14
         ' 
         ' TipoPosaComboBox
         ' 
+        TipoPosaComboBox.Enabled = False
         TipoPosaComboBox.FormattingEnabled = True
         TipoPosaComboBox.Items.AddRange(New Object() {"Incasso", "Parete", "Pareti leggere"})
-        TipoPosaComboBox.Location = New Point(275, 65)
+        TipoPosaComboBox.Location = New Point(275, 61)
         TipoPosaComboBox.Name = "TipoPosaComboBox"
         TipoPosaComboBox.Size = New Size(132, 23)
         TipoPosaComboBox.TabIndex = 3
@@ -553,6 +566,7 @@ Partial Class FormScatola
         ' 
         DivisorioScatolaTextBox.Location = New Point(135, 114)
         DivisorioScatolaTextBox.Name = "DivisorioScatolaTextBox"
+        DivisorioScatolaTextBox.ReadOnly = True
         DivisorioScatolaTextBox.Size = New Size(111, 23)
         DivisorioScatolaTextBox.TabIndex = 8
         ' 
@@ -588,6 +602,7 @@ Partial Class FormScatola
         AreaUtileLateraleTextBox.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         AreaUtileLateraleTextBox.Location = New Point(656, 276)
         AreaUtileLateraleTextBox.Name = "AreaUtileLateraleTextBox"
+        AreaUtileLateraleTextBox.ReadOnly = True
         AreaUtileLateraleTextBox.Size = New Size(100, 23)
         AreaUtileLateraleTextBox.TabIndex = 24
         ' 
