@@ -219,6 +219,9 @@ Public Class FormScatola
             ' Dopo aver salvato, ricarichiamo la griglia per vedere il nuovo dato
             CaricaDatiGriglia()
 
+            ' Deseleziona la riga selezionata
+            DeselezionaLibScatolaDataGridView()
+
         Catch ex As Exception
             MessageBox.Show("Errore durante il salvataggio nel database: " & vbCrLf & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -357,12 +360,18 @@ Public Class FormScatola
                 ' Svuotiamo il form per evitare confusione
                 ' Svuotiamo tutti i campi di inserimento per l'utente
                 SvuotaCampiScatola()
+
                 ' (Puoi richiamare la stessa logica del tasto Nuovo)
                 'NuovoScatolaToolStripButton.PerformClick()
+
                 ' Disabilita tutti i campi di inserimento per l'utente
                 DisabilitaCampiScatola()
+
                 ' Aggiorniamo la griglia
                 CaricaDatiGriglia()
+
+                ' Deseleziona la riga selezionata
+                DeselezionaLibScatolaDataGridView()
 
             Catch ex As Exception
                 MessageBox.Show("Errore durante l'eliminazione: " & vbCrLf & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
