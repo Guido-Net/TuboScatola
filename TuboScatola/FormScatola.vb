@@ -3,7 +3,7 @@
 Public Class FormScatola
 
     ' Variabile per capire se è stata selezionato un record
-    Public CellaSelezionata As Boolean
+    Public CellaSelezionata As Boolean = False
     ' Variabile per capire se stiamo creando una nuova scatola (0) o modificandone una esistente
     Private IDCorrente As Integer = 0
 
@@ -23,11 +23,12 @@ Public Class FormScatola
         Return valoreDecimale
     End Function
     Public Sub DeselezionaLibScatolaDataGridView()
+        ' Rimuove l'indicatore di cella attiva
+        LibScatolaDataGridView.CurrentCell = Nothing
+
         ' Deseleziona tutte le righe e le celle
         LibScatolaDataGridView.ClearSelection()
 
-        ' Rimuove l'indicatore di cella attiva
-        LibScatolaDataGridView.CurrentCell = Nothing
     End Sub
     Public Sub SvuotaCampiScatola()
         ' Svuotiamo tutti i campi di inserimento per l'utente
@@ -293,7 +294,10 @@ Public Class FormScatola
         If e.RowIndex >= 0 Then
 
             Dim rigaSelezionata As DataGridViewRow = LibScatolaDataGridView.Rows(e.RowIndex)
+
+            ' Riga selezionata
             CellaSelezionata = True
+            RecordToolStripLabel.Text = e.RowIndex
             ' Recuperiamo l'ID univoco
             IDCorrente = Convert.ToInt32(rigaSelezionata.Cells("Id").Value)
 
@@ -653,7 +657,11 @@ Public Class FormScatola
     End Sub
 
     Private Sub EsciScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles EsciScatolaToolStripButton.Click
-        Me.Close()
+        RecordToolStripLabel.Text = "- Navigazione -"
+        CellaSelezionata = False
+        Me.Dispose()
+        ' Me.Close()
+
 
     End Sub
 
