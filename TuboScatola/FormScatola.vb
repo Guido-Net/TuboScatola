@@ -29,6 +29,9 @@ Public Class FormScatola
         ' Deseleziona tutte le righe e le celle
         LibScatolaDataGridView.ClearSelection()
 
+        ' Aggiorniamo la barra di stato
+        NotificaScatolaToolStripStatusLabel.Text = "Deselezionata la scatola "
+
     End Sub
     Public Sub SvuotaCampiScatola()
         ' Svuotiamo tutti i campi di inserimento per l'utente
@@ -422,19 +425,43 @@ Public Class FormScatola
 
         ' Devi aggiungere qui TUTTE le colonne che hai trascinato nel report
         ' I nomi tra virgolette DEVONO essere identici a quelli nel Dati Report del .rdlc
+        dt.Columns.Add("CodiceScatola")
         dt.Columns.Add("Marca")
-        dt.Columns.Add("Modello")
+        dt.Columns.Add("Posa")
         dt.Columns.Add("Larghezza")
         dt.Columns.Add("Altezza")
         dt.Columns.Add("Profondita")
-        ' ... aggiungi tutte le altre ...
+        dt.Columns.Add("SettoreLargSopraSotto")
+        dt.Columns.Add("SettoreAltSopraSotto")
+        dt.Columns.Add("SettoreLargLaterali")
+        dt.Columns.Add("SettoreAltLaterali")
+        dt.Columns.Add("ForiPosteriori")
+        dt.Columns.Add("DivisorioScatola")
+        dt.Columns.Add("Note")
+        dt.Columns.Add("VolumeTotale")
+        dt.Columns.Add("VolumeScomparto")
+        dt.Columns.Add("AreaUtileSS")
+        dt.Columns.Add("AreaUtileLaterale")
+
 
         ' Ora riempiamo la riga con i dati che hai nelle TextBox/ComboBox a video
-        dt.Rows.Add(MarcaScatolaTextBox.Text,
-                    CodiceScatolaTextBox.Text,
+        dt.Rows.Add(CodiceScatolaTextBox.Text,
+                    MarcaScatolaTextBox.Text,
+                    TipoPosaComboBox.Text,
                     LarghezzaScatolaTextBox.Text,
                     AltezzaScatolaTextBox.Text,
-                    ProfonditaScatolaTextBox.Text)
+                    ProfonditaScatolaTextBox.Text,
+                    SettLargSSTextBox.Text,
+                    SettAltSSTextBox.Text,
+                    SettLargLateraliTextBox.Text,
+                    SettAltLateraliTextBox.Text,
+                    ForiPosterioriTextBox.Text,
+                    DivisorioScatolaTextBox.Text,
+                    NoteScatolaTextBox.Text,
+                    VolumeTotaleTextBox.Text,
+                    VolumeScompartoTextBox.Text,
+                    AreaUtileSSTextBox.Text,
+                    AreaUtileLateraleTextBox.Text)
 
         Return dt
     End Function
@@ -679,6 +706,9 @@ Public Class FormScatola
         If CellaSelezionata = True Then
             ' Abilitiamo tutti i campi di inserimento per l'utente
             AbilitaCampiScatola()
+
+            ' Modalità modifica attiva
+            NotificaScatolaToolStripStatusLabel.Text = "Modalità modifica dati attiva."
         Else
             ' Disabilita tutti i campi di inserimento per l'utente
             DisabilitaCampiScatola()
