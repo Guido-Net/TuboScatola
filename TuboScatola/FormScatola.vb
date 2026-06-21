@@ -29,8 +29,6 @@ Public Class FormScatola
         ' Deseleziona tutte le righe e le celle
         LibScatolaDataGridView.ClearSelection()
 
-        ' Aggiorniamo la barra di stato
-        NotificaScatolaToolStripStatusLabel.Text = "Deselezionata la scatola "
 
     End Sub
     Public Sub SvuotaCampiScatola()
@@ -261,7 +259,8 @@ Public Class FormScatola
 
     ' Per far apparire i dati appena si apre il form
     Private Sub FormScatola_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ' Abilita l'intercettazione dei tasti sul form.
+        KeyPreview = True
         Try
             Dim cartellaEseguibile As String = Application.StartupPath
             Dim percorsoDatabase As String = ""
@@ -288,7 +287,9 @@ Public Class FormScatola
             CaricaDatiGriglia()
             NotificaScatolaToolStripStatusLabel.Text = "Pronto. Connessione database eseguita con successo."
 
+            ' Deseleziona la DGW
             DeselezionaLibScatolaDataGridView()
+
         Catch ex As Exception
             MessageBox.Show("Errore durante l'inizializzazione del database: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -716,5 +717,31 @@ Public Class FormScatola
         End If
     End Sub
 
+    Private Sub FormScatola_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
 
+        ' Se premuto il tasto ESC...
+        If e.KeyCode = Keys.Escape Then
+            ' E la riga della DGW è selezionata...
+            If CellaSelezionata = True Then
+
+                ' Deseleziona la DGW.
+                DeselezionaLibScatolaDataGridView()
+                ' Disabilita tutti i campi di inserimento per l'utente
+                DisabilitaCampiScatola()
+
+                ' MessageBox.Show("Deselezionamento riga eseguito....", "Deselezione record.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+                ' Notifica modalità modifica disattivata
+                NotificaScatolaToolStripStatusLabel.Text = "Modalità modifica dati disattivata."
+            Else ' Se invece non è selezionata nessuna riga della DGW...
+                ' Ciude il Form Scatola...
+                Me.Dispose()
+            End If
+            ' Azzerta la selezione di riga DGW.
+            CellaSelezionata = False
+        End If
+
+
+    End Sub
 End Class
