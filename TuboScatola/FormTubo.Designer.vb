@@ -53,11 +53,11 @@ Partial Class FormTubo
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox4 = New TextBox()
-        ComboBox1 = New ComboBox()
+        MarcaTuboTextBox = New TextBox()
+        DiamEstTextBox = New TextBox()
+        DiamIntTextBox = New TextBox()
+        NoteTuboTextBox = New TextBox()
+        TipoTuboComboBox = New ComboBox()
         LibTuboDataGridView = New DataGridView()
         TuboToolStrip.SuspendLayout()
         NotificaTuboStatusStrip.SuspendLayout()
@@ -267,8 +267,9 @@ Partial Class FormTubo
         ' 
         ' NotificaTuboToolStripStatusLabel
         ' 
+        NotificaTuboToolStripStatusLabel.Image = CType(resources.GetObject("NotificaTuboToolStripStatusLabel.Image"), Image)
         NotificaTuboToolStripStatusLabel.Name = "NotificaTuboToolStripStatusLabel"
-        NotificaTuboToolStripStatusLabel.Size = New Size(184, 17)
+        NotificaTuboToolStripStatusLabel.Size = New Size(200, 17)
         NotificaTuboToolStripStatusLabel.Text = "NotificaTuboToolStripStatusLabel"
         ' 
         ' Label1
@@ -316,44 +317,44 @@ Partial Class FormTubo
         Label5.TabIndex = 11
         Label5.Text = "Note :"
         ' 
-        ' TextBox1
+        ' MarcaTuboTextBox
         ' 
-        TextBox1.Location = New Point(12, 65)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(118, 23)
-        TextBox1.TabIndex = 12
+        MarcaTuboTextBox.Location = New Point(12, 65)
+        MarcaTuboTextBox.Name = "MarcaTuboTextBox"
+        MarcaTuboTextBox.Size = New Size(118, 23)
+        MarcaTuboTextBox.TabIndex = 12
         ' 
-        ' TextBox2
+        ' DiamEstTextBox
         ' 
-        TextBox2.Location = New Point(348, 65)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(119, 23)
-        TextBox2.TabIndex = 13
+        DiamEstTextBox.Location = New Point(348, 65)
+        DiamEstTextBox.Name = "DiamEstTextBox"
+        DiamEstTextBox.Size = New Size(119, 23)
+        DiamEstTextBox.TabIndex = 13
         ' 
-        ' TextBox3
+        ' DiamIntTextBox
         ' 
-        TextBox3.Location = New Point(483, 65)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(115, 23)
-        TextBox3.TabIndex = 14
+        DiamIntTextBox.Location = New Point(483, 65)
+        DiamIntTextBox.Name = "DiamIntTextBox"
+        DiamIntTextBox.Size = New Size(115, 23)
+        DiamIntTextBox.TabIndex = 14
         ' 
-        ' TextBox4
+        ' NoteTuboTextBox
         ' 
-        TextBox4.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox4.Location = New Point(12, 122)
-        TextBox4.Multiline = True
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(600, 66)
-        TextBox4.TabIndex = 15
+        NoteTuboTextBox.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        NoteTuboTextBox.Location = New Point(12, 122)
+        NoteTuboTextBox.Multiline = True
+        NoteTuboTextBox.Name = "NoteTuboTextBox"
+        NoteTuboTextBox.Size = New Size(600, 66)
+        NoteTuboTextBox.TabIndex = 15
         ' 
-        ' ComboBox1
+        ' TipoTuboComboBox
         ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"FK Corrugato", "RK Rigido", "DF Flessibile", "Cavidotto doppia parete"})
-        ComboBox1.Location = New Point(148, 65)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(179, 23)
-        ComboBox1.TabIndex = 17
+        TipoTuboComboBox.FormattingEnabled = True
+        TipoTuboComboBox.Items.AddRange(New Object() {"FK Corrugato", "RK Rigido", "DF Flessibile", "Cavidotto doppia parete"})
+        TipoTuboComboBox.Location = New Point(148, 65)
+        TipoTuboComboBox.Name = "TipoTuboComboBox"
+        TipoTuboComboBox.Size = New Size(179, 23)
+        TipoTuboComboBox.TabIndex = 17
         ' 
         ' LibTuboDataGridView
         ' 
@@ -370,11 +371,11 @@ Partial Class FormTubo
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(627, 450)
         Controls.Add(LibTuboDataGridView)
-        Controls.Add(ComboBox1)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(TipoTuboComboBox)
+        Controls.Add(NoteTuboTextBox)
+        Controls.Add(DiamIntTextBox)
+        Controls.Add(DiamEstTextBox)
+        Controls.Add(MarcaTuboTextBox)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
@@ -428,10 +429,10 @@ Partial Class FormTubo
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents MarcaTuboTextBox As TextBox
+    Friend WithEvents DiamEstTextBox As TextBox
+    Friend WithEvents DiamIntTextBox As TextBox
+    Friend WithEvents NoteTuboTextBox As TextBox
+    Friend WithEvents TipoTuboComboBox As ComboBox
     Friend WithEvents LibTuboDataGridView As DataGridView
 End Class
