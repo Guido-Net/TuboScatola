@@ -33,8 +33,8 @@ Partial Class FormFilo
         ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripButton5 = New ToolStripButton()
         ToolStripButton6 = New ToolStripButton()
-        ToolStripButton7 = New ToolStripButton()
         ToolStripButton8 = New ToolStripButton()
+        ToolStripButton7 = New ToolStripButton()
         ToolStripSeparator2 = New ToolStripSeparator()
         ToolStripButton9 = New ToolStripButton()
         ToolStripButton10 = New ToolStripButton()
@@ -112,8 +112,8 @@ Partial Class FormFilo
         ' ToolStripLabel1
         ' 
         ToolStripLabel1.Name = "ToolStripLabel1"
-        ToolStripLabel1.Size = New Size(88, 22)
-        ToolStripLabel1.Text = "ToolStripLabel1"
+        ToolStripLabel1.Size = New Size(82, 22)
+        ToolStripLabel1.Text = "-Navigazione-"
         ' 
         ' AvantiFiloToolStripButton
         ' 
@@ -156,15 +156,6 @@ Partial Class FormFilo
         ToolStripButton6.Size = New Size(23, 22)
         ToolStripButton6.Text = "ToolStripButton6"
         ' 
-        ' ToolStripButton7
-        ' 
-        ToolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton7.Image = CType(resources.GetObject("ToolStripButton7.Image"), Image)
-        ToolStripButton7.ImageTransparentColor = Color.Magenta
-        ToolStripButton7.Name = "ToolStripButton7"
-        ToolStripButton7.Size = New Size(23, 22)
-        ToolStripButton7.Text = "ToolStripButton7"
-        ' 
         ' ToolStripButton8
         ' 
         ToolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Image
@@ -173,6 +164,15 @@ Partial Class FormFilo
         ToolStripButton8.Name = "ToolStripButton8"
         ToolStripButton8.Size = New Size(23, 22)
         ToolStripButton8.Text = "ToolStripButton8"
+        ' 
+        ' ToolStripButton7
+        ' 
+        ToolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton7.Image = CType(resources.GetObject("ToolStripButton7.Image"), Image)
+        ToolStripButton7.ImageTransparentColor = Color.Magenta
+        ToolStripButton7.Name = "ToolStripButton7"
+        ToolStripButton7.Size = New Size(23, 22)
+        ToolStripButton7.Text = "ToolStripButton7"
         ' 
         ' ToolStripSeparator2
         ' 
