@@ -33,8 +33,8 @@ Partial Class FormTubo
         ToolStripSeparator1 = New ToolStripSeparator()
         NuovoTuboToolStripButton = New ToolStripButton()
         SalvaTuboToolStripButton = New ToolStripButton()
-        EliminaTuboToolStripButton = New ToolStripButton()
         ModificaTuboToolStripButton = New ToolStripButton()
+        EliminaTuboToolStripButton = New ToolStripButton()
         ToolStripSeparator2 = New ToolStripSeparator()
         RicercaTuboToolStripButton = New ToolStripButton()
         AnnulaRicercaTuboToolStripButton = New ToolStripButton()
@@ -106,8 +106,8 @@ Partial Class FormTubo
         ' RecordTuboToolStripLabel
         ' 
         RecordTuboToolStripLabel.Name = "RecordTuboToolStripLabel"
-        RecordTuboToolStripLabel.Size = New Size(88, 22)
-        RecordTuboToolStripLabel.Text = "ToolStripLabel1"
+        RecordTuboToolStripLabel.Size = New Size(82, 22)
+        RecordTuboToolStripLabel.Text = "-Navigazione-"
         ' 
         ' AvantiTuboToolStripButton
         ' 
@@ -150,15 +150,6 @@ Partial Class FormTubo
         SalvaTuboToolStripButton.Size = New Size(23, 22)
         SalvaTuboToolStripButton.Text = "ToolStripButton6"
         ' 
-        ' EliminaTuboToolStripButton
-        ' 
-        EliminaTuboToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
-        EliminaTuboToolStripButton.Image = CType(resources.GetObject("EliminaTuboToolStripButton.Image"), Image)
-        EliminaTuboToolStripButton.ImageTransparentColor = Color.Magenta
-        EliminaTuboToolStripButton.Name = "EliminaTuboToolStripButton"
-        EliminaTuboToolStripButton.Size = New Size(23, 22)
-        EliminaTuboToolStripButton.Text = "ToolStripButton7"
-        ' 
         ' ModificaTuboToolStripButton
         ' 
         ModificaTuboToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
@@ -167,6 +158,15 @@ Partial Class FormTubo
         ModificaTuboToolStripButton.Name = "ModificaTuboToolStripButton"
         ModificaTuboToolStripButton.Size = New Size(23, 22)
         ModificaTuboToolStripButton.Text = "ToolStripButton8"
+        ' 
+        ' EliminaTuboToolStripButton
+        ' 
+        EliminaTuboToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
+        EliminaTuboToolStripButton.Image = CType(resources.GetObject("EliminaTuboToolStripButton.Image"), Image)
+        EliminaTuboToolStripButton.ImageTransparentColor = Color.Magenta
+        EliminaTuboToolStripButton.Name = "EliminaTuboToolStripButton"
+        EliminaTuboToolStripButton.Size = New Size(23, 22)
+        EliminaTuboToolStripButton.Text = "ToolStripButton7"
         ' 
         ' ToolStripSeparator2
         ' 
