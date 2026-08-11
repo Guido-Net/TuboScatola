@@ -38,7 +38,7 @@ Partial Class FormTubo
         ToolStripSeparator2 = New ToolStripSeparator()
         RicercaTuboToolStripButton = New ToolStripButton()
         AnnulaRicercaTuboToolStripButton = New ToolStripButton()
-        StampaTuboToolStripButton1 = New ToolStripButton()
+        StampaTuboToolStripButton = New ToolStripButton()
         ToolStripSeparator3 = New ToolStripSeparator()
         EsportaDBTuboToolStripButton = New ToolStripButton()
         ImportaDBTuboToolStripButton = New ToolStripButton()
@@ -59,8 +59,6 @@ Partial Class FormTubo
         NoteTuboTextBox = New TextBox()
         TipoTuboComboBox = New ComboBox()
         LibTuboDataGridView = New DataGridView()
-        Label6 = New Label()
-        AltezzaCanaleTextBox = New TextBox()
         TuboToolStrip.SuspendLayout()
         NotificaTuboStatusStrip.SuspendLayout()
         CType(LibTuboDataGridView, ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +70,7 @@ Partial Class FormTubo
         NotificaTuboLabel.BorderStyle = BorderStyle.Fixed3D
         NotificaTuboLabel.Location = New Point(12, 370)
         NotificaTuboLabel.Name = "NotificaTuboLabel"
-        NotificaTuboLabel.Size = New Size(734, 56)
+        NotificaTuboLabel.Size = New Size(590, 56)
         NotificaTuboLabel.TabIndex = 2
         NotificaTuboLabel.Text = "Label1"
         ' 
@@ -80,10 +78,10 @@ Partial Class FormTubo
         ' 
         TuboToolStrip.BackColor = SystemColors.ControlDark
         TuboToolStrip.GripStyle = ToolStripGripStyle.Hidden
-        TuboToolStrip.Items.AddRange(New ToolStripItem() {InizioTuboToolStripButton, IndietroTuboToolStripButton, RecordTuboToolStripLabel, AvantiTuboToolStripButton, FineTuboToolStripButton, ToolStripSeparator1, NuovoTuboToolStripButton, SalvaTuboToolStripButton, ModificaTuboToolStripButton, EliminaTuboToolStripButton, ToolStripSeparator2, RicercaTuboToolStripButton, AnnulaRicercaTuboToolStripButton, StampaTuboToolStripButton1, ToolStripSeparator3, EsportaDBTuboToolStripButton, ImportaDBTuboToolStripButton, EliminaDBTuboToolStripButton, ToolStripSeparator4, EsciTuboToolStripButton, AiutoTuboToolStripButton})
+        TuboToolStrip.Items.AddRange(New ToolStripItem() {InizioTuboToolStripButton, IndietroTuboToolStripButton, RecordTuboToolStripLabel, AvantiTuboToolStripButton, FineTuboToolStripButton, ToolStripSeparator1, NuovoTuboToolStripButton, SalvaTuboToolStripButton, ModificaTuboToolStripButton, EliminaTuboToolStripButton, ToolStripSeparator2, RicercaTuboToolStripButton, AnnulaRicercaTuboToolStripButton, StampaTuboToolStripButton, ToolStripSeparator3, EsportaDBTuboToolStripButton, ImportaDBTuboToolStripButton, EliminaDBTuboToolStripButton, ToolStripSeparator4, EsciTuboToolStripButton, AiutoTuboToolStripButton})
         TuboToolStrip.Location = New Point(0, 0)
         TuboToolStrip.Name = "TuboToolStrip"
-        TuboToolStrip.Size = New Size(758, 25)
+        TuboToolStrip.Size = New Size(614, 25)
         TuboToolStrip.TabIndex = 5
         TuboToolStrip.Text = "ToolStrip1"
         ' 
@@ -193,14 +191,14 @@ Partial Class FormTubo
         AnnulaRicercaTuboToolStripButton.Size = New Size(23, 22)
         AnnulaRicercaTuboToolStripButton.Text = "ToolStripButton10"
         ' 
-        ' StampaTuboToolStripButton1
+        ' StampaTuboToolStripButton
         ' 
-        StampaTuboToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
-        StampaTuboToolStripButton1.Image = CType(resources.GetObject("StampaTuboToolStripButton1.Image"), Image)
-        StampaTuboToolStripButton1.ImageTransparentColor = Color.Magenta
-        StampaTuboToolStripButton1.Name = "StampaTuboToolStripButton1"
-        StampaTuboToolStripButton1.Size = New Size(23, 22)
-        StampaTuboToolStripButton1.Text = "ToolStripButton11"
+        StampaTuboToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
+        StampaTuboToolStripButton.Image = CType(resources.GetObject("StampaTuboToolStripButton.Image"), Image)
+        StampaTuboToolStripButton.ImageTransparentColor = Color.Magenta
+        StampaTuboToolStripButton.Name = "StampaTuboToolStripButton"
+        StampaTuboToolStripButton.Size = New Size(23, 22)
+        StampaTuboToolStripButton.Text = "ToolStripButton11"
         ' 
         ' ToolStripSeparator3
         ' 
@@ -263,7 +261,7 @@ Partial Class FormTubo
         NotificaTuboStatusStrip.Items.AddRange(New ToolStripItem() {NotificaTuboToolStripStatusLabel})
         NotificaTuboStatusStrip.Location = New Point(0, 426)
         NotificaTuboStatusStrip.Name = "NotificaTuboStatusStrip"
-        NotificaTuboStatusStrip.Size = New Size(758, 22)
+        NotificaTuboStatusStrip.Size = New Size(614, 22)
         NotificaTuboStatusStrip.TabIndex = 6
         NotificaTuboStatusStrip.Text = "StatusStrip1"
         ' 
@@ -346,13 +344,13 @@ Partial Class FormTubo
         NoteTuboTextBox.Location = New Point(12, 122)
         NoteTuboTextBox.Multiline = True
         NoteTuboTextBox.Name = "NoteTuboTextBox"
-        NoteTuboTextBox.Size = New Size(731, 79)
+        NoteTuboTextBox.Size = New Size(587, 79)
         NoteTuboTextBox.TabIndex = 15
         ' 
         ' TipoTuboComboBox
         ' 
         TipoTuboComboBox.FormattingEnabled = True
-        TipoTuboComboBox.Items.AddRange(New Object() {"FK Corrugato", "RK Rigido", "DF Flessibile", "Cavidotto doppia parete", "Canala"})
+        TipoTuboComboBox.Items.AddRange(New Object() {"FK Corrugato", "RK Rigido", "DF Flessibile", "Cavidotto doppia parete"})
         TipoTuboComboBox.Location = New Point(148, 65)
         TipoTuboComboBox.Name = "TipoTuboComboBox"
         TipoTuboComboBox.Size = New Size(179, 23)
@@ -364,32 +362,14 @@ Partial Class FormTubo
         LibTuboDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         LibTuboDataGridView.Location = New Point(12, 210)
         LibTuboDataGridView.Name = "LibTuboDataGridView"
-        LibTuboDataGridView.Size = New Size(731, 150)
+        LibTuboDataGridView.Size = New Size(587, 150)
         LibTuboDataGridView.TabIndex = 18
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(625, 38)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(83, 15)
-        Label6.TabIndex = 19
-        Label6.Text = "Altezza (mm) :"
-        ' 
-        ' AltezzaCanaleTextBox
-        ' 
-        AltezzaCanaleTextBox.Location = New Point(625, 65)
-        AltezzaCanaleTextBox.Name = "AltezzaCanaleTextBox"
-        AltezzaCanaleTextBox.Size = New Size(119, 23)
-        AltezzaCanaleTextBox.TabIndex = 20
         ' 
         ' FormTubo
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(758, 448)
-        Controls.Add(AltezzaCanaleTextBox)
-        Controls.Add(Label6)
+        ClientSize = New Size(614, 448)
         Controls.Add(LibTuboDataGridView)
         Controls.Add(TipoTuboComboBox)
         Controls.Add(NoteTuboTextBox)
@@ -434,7 +414,7 @@ Partial Class FormTubo
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents RicercaTuboToolStripButton As ToolStripButton
     Friend WithEvents AnnulaRicercaTuboToolStripButton As ToolStripButton
-    Friend WithEvents StampaTuboToolStripButton1 As ToolStripButton
+    Friend WithEvents StampaTuboToolStripButton As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents EsportaDBTuboToolStripButton As ToolStripButton
     Friend WithEvents ImportaDBTuboToolStripButton As ToolStripButton
@@ -455,6 +435,4 @@ Partial Class FormTubo
     Friend WithEvents NoteTuboTextBox As TextBox
     Friend WithEvents TipoTuboComboBox As ComboBox
     Friend WithEvents LibTuboDataGridView As DataGridView
-    Friend WithEvents Label6 As Label
-    Friend WithEvents AltezzaCanaleTextBox As TextBox
 End Class
