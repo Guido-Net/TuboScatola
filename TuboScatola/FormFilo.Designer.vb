@@ -48,12 +48,12 @@ Partial Class FormFilo
         ToolStripButton16 = New ToolStripButton()
         NotificaFiloStatusStrip = New StatusStrip()
         NotificaFiloToolStripStatusLabel = New ToolStripStatusLabel()
-        NoteFiloText = New TextBox()
+        NoteFiloTextBox = New TextBox()
         Label1 = New Label()
-        SezioneText = New TextBox()
+        SezioneFiloTextBox = New TextBox()
         Label2 = New Label()
         Label3 = New Label()
-        TipofiloText = New TextBox()
+        TipofiloTextBox = New TextBox()
         Label4 = New Label()
         DiametroEsternoFiloTextBox = New TextBox()
         Label5 = New Label()
@@ -277,14 +277,15 @@ Partial Class FormFilo
         NotificaFiloToolStripStatusLabel.Size = New Size(175, 17)
         NotificaFiloToolStripStatusLabel.Text = "NotificaFiloToolStripStatusLabel"
         ' 
-        ' NoteFiloText
+        ' NoteFiloTextBox
         ' 
-        NoteFiloText.Location = New Point(13, 164)
-        NoteFiloText.Multiline = True
-        NoteFiloText.Name = "NoteFiloText"
-        NoteFiloText.ScrollBars = ScrollBars.Vertical
-        NoteFiloText.Size = New Size(775, 66)
-        NoteFiloText.TabIndex = 6
+        NoteFiloTextBox.Location = New Point(13, 164)
+        NoteFiloTextBox.Multiline = True
+        NoteFiloTextBox.Name = "NoteFiloTextBox"
+        NoteFiloTextBox.ScrollBars = ScrollBars.Vertical
+        NoteFiloTextBox.Size = New Size(775, 66)
+        NoteFiloTextBox.TabIndex = 6
+        NoteFiloTextBox.Text = "NoteFiloTextBox"
         ' 
         ' Label1
         ' 
@@ -295,12 +296,13 @@ Partial Class FormFilo
         Label1.TabIndex = 4
         Label1.Text = "Note :"
         ' 
-        ' SezioneText
+        ' SezioneFiloTextBox
         ' 
-        SezioneText.Location = New Point(174, 53)
-        SezioneText.Name = "SezioneText"
-        SezioneText.Size = New Size(93, 23)
-        SezioneText.TabIndex = 2
+        SezioneFiloTextBox.Location = New Point(174, 53)
+        SezioneFiloTextBox.Name = "SezioneFiloTextBox"
+        SezioneFiloTextBox.Size = New Size(93, 23)
+        SezioneFiloTextBox.TabIndex = 2
+        SezioneFiloTextBox.Text = "SezioneFiloTextBox"
         ' 
         ' Label2
         ' 
@@ -320,12 +322,13 @@ Partial Class FormFilo
         Label3.TabIndex = 7
         Label3.Text = "Tipo Filo :"
         ' 
-        ' TipofiloText
+        ' TipofiloTextBox
         ' 
-        TipofiloText.Location = New Point(13, 53)
-        TipofiloText.Name = "TipofiloText"
-        TipofiloText.Size = New Size(143, 23)
-        TipofiloText.TabIndex = 1
+        TipofiloTextBox.Location = New Point(13, 53)
+        TipofiloTextBox.Name = "TipofiloTextBox"
+        TipofiloTextBox.Size = New Size(143, 23)
+        TipofiloTextBox.TabIndex = 1
+        TipofiloTextBox.Text = "TipofiloTextBox"
         ' 
         ' Label4
         ' 
@@ -342,6 +345,7 @@ Partial Class FormFilo
         DiametroEsternoFiloTextBox.Name = "DiametroEsternoFiloTextBox"
         DiametroEsternoFiloTextBox.Size = New Size(137, 23)
         DiametroEsternoFiloTextBox.TabIndex = 3
+        DiametroEsternoFiloTextBox.Text = "DiametroEsternoFiloTextBox"
         ' 
         ' Label5
         ' 
@@ -358,7 +362,7 @@ Partial Class FormFilo
         LunghezzaFiloTextBox.Name = "LunghezzaFiloTextBox"
         LunghezzaFiloTextBox.Size = New Size(100, 23)
         LunghezzaFiloTextBox.TabIndex = 4
-        LunghezzaFiloTextBox.Text = "17"
+        LunghezzaFiloTextBox.Text = "LunghezzaFiloTextBox"
         LunghezzaFiloTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' SupEstFiloLabel
@@ -395,6 +399,7 @@ Partial Class FormFilo
         ColoreFiloTextBox.Name = "ColoreFiloTextBox"
         ColoreFiloTextBox.Size = New Size(100, 23)
         ColoreFiloTextBox.TabIndex = 15
+        ColoreFiloTextBox.Text = "ColoreFiloTextBox"
         ' 
         ' Label8
         ' 
@@ -412,6 +417,7 @@ Partial Class FormFilo
         NoteColoreFiloTextBox.ScrollBars = ScrollBars.Vertical
         NoteColoreFiloTextBox.Size = New Size(349, 23)
         NoteColoreFiloTextBox.TabIndex = 18
+        NoteColoreFiloTextBox.Text = "NoteColoreFiloTextBox"
         ' 
         ' LibFiloDataGridView
         ' 
@@ -437,12 +443,12 @@ Partial Class FormFilo
         Controls.Add(LunghezzaFiloTextBox)
         Controls.Add(Label4)
         Controls.Add(DiametroEsternoFiloTextBox)
-        Controls.Add(TipofiloText)
+        Controls.Add(TipofiloTextBox)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(SezioneText)
+        Controls.Add(SezioneFiloTextBox)
         Controls.Add(Label1)
-        Controls.Add(NoteFiloText)
+        Controls.Add(NoteFiloTextBox)
         Controls.Add(NotificaFiloStatusStrip)
         Controls.Add(FiloToolStrip)
         Controls.Add(NotificaFiliLabel)
@@ -465,12 +471,12 @@ Partial Class FormFilo
     Friend WithEvents FiloToolStrip As ToolStrip
     Friend WithEvents NotificaFiloStatusStrip As StatusStrip
     Friend WithEvents NotificaFiloToolStripStatusLabel As ToolStripStatusLabel
-    Friend WithEvents NoteFiloText As TextBox
+    Friend WithEvents NoteFiloTextBox As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents SezioneText As TextBox
+    Friend WithEvents SezioneFiloTextBox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TipofiloText As TextBox
+    Friend WithEvents TipofiloTextBox As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents DiametroEsternoFiloTextBox As TextBox
     Friend WithEvents Label5 As Label
