@@ -93,6 +93,7 @@ Partial Class FormTubo
         InizioTuboToolStripButton.Name = "InizioTuboToolStripButton"
         InizioTuboToolStripButton.Size = New Size(23, 22)
         InizioTuboToolStripButton.Text = "ToolStripButton1"
+        InizioTuboToolStripButton.ToolTipText = "Vai all'inizio"
         ' 
         ' IndietroTuboToolStripButton
         ' 
@@ -102,12 +103,14 @@ Partial Class FormTubo
         IndietroTuboToolStripButton.Name = "IndietroTuboToolStripButton"
         IndietroTuboToolStripButton.Size = New Size(23, 22)
         IndietroTuboToolStripButton.Text = "ToolStripButton2"
+        IndietroTuboToolStripButton.ToolTipText = "Vai indietro"
         ' 
         ' RecordTuboToolStripLabel
         ' 
         RecordTuboToolStripLabel.Name = "RecordTuboToolStripLabel"
-        RecordTuboToolStripLabel.Size = New Size(82, 22)
-        RecordTuboToolStripLabel.Text = "-Navigazione-"
+        RecordTuboToolStripLabel.Size = New Size(22, 22)
+        RecordTuboToolStripLabel.Text = "-/-"
+        RecordTuboToolStripLabel.ToolTipText = "Record selezionato"
         ' 
         ' AvantiTuboToolStripButton
         ' 
@@ -117,6 +120,7 @@ Partial Class FormTubo
         AvantiTuboToolStripButton.Name = "AvantiTuboToolStripButton"
         AvantiTuboToolStripButton.Size = New Size(23, 22)
         AvantiTuboToolStripButton.Text = "ToolStripButton3"
+        AvantiTuboToolStripButton.ToolTipText = "Vai avanti"
         ' 
         ' FineTuboToolStripButton
         ' 
@@ -126,6 +130,7 @@ Partial Class FormTubo
         FineTuboToolStripButton.Name = "FineTuboToolStripButton"
         FineTuboToolStripButton.Size = New Size(23, 22)
         FineTuboToolStripButton.Text = "ToolStripButton4"
+        FineTuboToolStripButton.ToolTipText = "Vai alla fine"
         ' 
         ' ToolStripSeparator1
         ' 
@@ -140,6 +145,7 @@ Partial Class FormTubo
         NuovoTuboToolStripButton.Name = "NuovoTuboToolStripButton"
         NuovoTuboToolStripButton.Size = New Size(23, 22)
         NuovoTuboToolStripButton.Text = "ToolStripButton5"
+        NuovoTuboToolStripButton.ToolTipText = "Nuovo record"
         ' 
         ' SalvaTuboToolStripButton
         ' 
@@ -149,6 +155,7 @@ Partial Class FormTubo
         SalvaTuboToolStripButton.Name = "SalvaTuboToolStripButton"
         SalvaTuboToolStripButton.Size = New Size(23, 22)
         SalvaTuboToolStripButton.Text = "ToolStripButton6"
+        SalvaTuboToolStripButton.ToolTipText = "Salva dati"
         ' 
         ' ModificaTuboToolStripButton
         ' 
@@ -158,6 +165,7 @@ Partial Class FormTubo
         ModificaTuboToolStripButton.Name = "ModificaTuboToolStripButton"
         ModificaTuboToolStripButton.Size = New Size(23, 22)
         ModificaTuboToolStripButton.Text = "ToolStripButton8"
+        ModificaTuboToolStripButton.ToolTipText = "Modifica dati selezionati"
         ' 
         ' EliminaTuboToolStripButton
         ' 
@@ -167,6 +175,7 @@ Partial Class FormTubo
         EliminaTuboToolStripButton.Name = "EliminaTuboToolStripButton"
         EliminaTuboToolStripButton.Size = New Size(23, 22)
         EliminaTuboToolStripButton.Text = "ToolStripButton7"
+        EliminaTuboToolStripButton.ToolTipText = "Elimina dati selezionati"
         ' 
         ' ToolStripSeparator2
         ' 
@@ -181,6 +190,7 @@ Partial Class FormTubo
         RicercaTuboToolStripButton.Name = "RicercaTuboToolStripButton"
         RicercaTuboToolStripButton.Size = New Size(23, 22)
         RicercaTuboToolStripButton.Text = "ToolStripButton9"
+        RicercaTuboToolStripButton.ToolTipText = "Ricerca dati"
         ' 
         ' AnnulaRicercaTuboToolStripButton
         ' 
@@ -189,7 +199,7 @@ Partial Class FormTubo
         AnnulaRicercaTuboToolStripButton.ImageTransparentColor = Color.Magenta
         AnnulaRicercaTuboToolStripButton.Name = "AnnulaRicercaTuboToolStripButton"
         AnnulaRicercaTuboToolStripButton.Size = New Size(23, 22)
-        AnnulaRicercaTuboToolStripButton.Text = "ToolStripButton10"
+        AnnulaRicercaTuboToolStripButton.Text = "Annulla ricerca"
         ' 
         ' StampaTuboToolStripButton
         ' 
@@ -212,7 +222,7 @@ Partial Class FormTubo
         EsportaDBTuboToolStripButton.ImageTransparentColor = Color.Magenta
         EsportaDBTuboToolStripButton.Name = "EsportaDBTuboToolStripButton"
         EsportaDBTuboToolStripButton.Size = New Size(23, 22)
-        EsportaDBTuboToolStripButton.Text = "ToolStripButton12"
+        EsportaDBTuboToolStripButton.Text = "Esporta Data Base"
         ' 
         ' ImportaDBTuboToolStripButton
         ' 
@@ -221,7 +231,7 @@ Partial Class FormTubo
         ImportaDBTuboToolStripButton.ImageTransparentColor = Color.Magenta
         ImportaDBTuboToolStripButton.Name = "ImportaDBTuboToolStripButton"
         ImportaDBTuboToolStripButton.Size = New Size(23, 22)
-        ImportaDBTuboToolStripButton.Text = "ToolStripButton13"
+        ImportaDBTuboToolStripButton.Text = "Importa Data Base"
         ' 
         ' EliminaDBTuboToolStripButton
         ' 
@@ -230,7 +240,7 @@ Partial Class FormTubo
         EliminaDBTuboToolStripButton.ImageTransparentColor = Color.Magenta
         EliminaDBTuboToolStripButton.Name = "EliminaDBTuboToolStripButton"
         EliminaDBTuboToolStripButton.Size = New Size(23, 22)
-        EliminaDBTuboToolStripButton.Text = "ToolStripButton14"
+        EliminaDBTuboToolStripButton.Text = "Ripulisci Data Base"
         ' 
         ' ToolStripSeparator4
         ' 
@@ -244,7 +254,7 @@ Partial Class FormTubo
         EsciTuboToolStripButton.ImageTransparentColor = Color.Magenta
         EsciTuboToolStripButton.Name = "EsciTuboToolStripButton"
         EsciTuboToolStripButton.Size = New Size(23, 22)
-        EsciTuboToolStripButton.Text = "ToolStripButton15"
+        EsciTuboToolStripButton.Text = "Chiudi finestra Tubo"
         ' 
         ' AiutoTuboToolStripButton
         ' 
@@ -254,7 +264,7 @@ Partial Class FormTubo
         AiutoTuboToolStripButton.ImageTransparentColor = Color.Magenta
         AiutoTuboToolStripButton.Name = "AiutoTuboToolStripButton"
         AiutoTuboToolStripButton.Size = New Size(23, 22)
-        AiutoTuboToolStripButton.Text = "ToolStripButton16"
+        AiutoTuboToolStripButton.Text = "Aiuto tubo"
         ' 
         ' NotificaTuboStatusStrip
         ' 

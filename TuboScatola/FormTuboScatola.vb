@@ -330,6 +330,7 @@ Public Class FormTuboScatola
             End Try
         End Using
     End Sub
+
     Private Sub DiametroEstComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DiametroEstComboBox.SelectedIndexChanged
         If DiametroEstComboBox.SelectedItem Is Nothing Then Exit Sub
         ' Se stiamo resettando, non fare nulla e esci!
