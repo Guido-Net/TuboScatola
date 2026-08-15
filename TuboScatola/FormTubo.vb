@@ -222,7 +222,7 @@
     End Sub
 
     Private Sub RicercaTuboToolStripButton_Click(sender As Object, e As EventArgs) Handles RicercaTuboToolStripButton.Click
-        Dim frmCerca As New FormCerca()
+        Dim frmCerca As New FormCercaTubo()
         frmCerca.ShowDialog()
         DisabilitaCampiTubo()
     End Sub

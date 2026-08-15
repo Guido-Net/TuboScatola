@@ -403,7 +403,7 @@ Public Class FormScatola
     ' --- APERTURA DEL FORM DI RICERCA ---
     Private Sub RicercaScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles RicercaScatolaToolStripButton.Click
         ' Creiamo una nuova istanza del form di ricerca
-        Dim frmCerca As New FormCerca()
+        Dim frmCerca As New FormCercaScatola()
 
         ' Lo mostriamo come finestra di dialogo (il resto del form resta bloccato finché non chiudi la ricerca)
         frmCerca.ShowDialog()

@@ -1,4 +1,4 @@
-﻿Public Class FormCerca
+﻿Public Class FormCercaScatola
     Private Sub FormCerca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
