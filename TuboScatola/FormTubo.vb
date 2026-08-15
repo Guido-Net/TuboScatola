@@ -155,12 +155,31 @@
 
     ' --- SELEZIONE RECORD DALLA GRIGLIA ---
     Private Sub LibTuboDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles LibTuboDataGridView.CellClick
+        ' Verifica che l'indice della riga sia valido
         If e.RowIndex >= 0 Then
             Dim rigaSelezionata As DataGridViewRow = LibTuboDataGridView.Rows(e.RowIndex)
 
+            ' Se l'utente clicca sulla riga con l'asterisco (riga vuota in basso), abortisce la selezione
+            If rigaSelezionata.IsNewRow Then
+                DeselezionaLibTuboDataGridView()
+                DisabilitaCampiTubo()
+                SvuotaCampiTubo()
+                IDCorrente = 0
+                CellaSelezionata = False
+                NotificaTuboToolStripStatusLabel.Text = "Selezione errata..."
+                Exit Sub
+            End If
+
+            ' Se la riga è valida, carica i dati nei campi del form
             CellaSelezionata = True
             RecordTuboToolStripLabel.Text = (e.RowIndex + 1).ToString()
-            IDCorrente = Convert.ToInt32(rigaSelezionata.Cells("Id").Value)
+
+            ' Gestione sicura del cast per l'Id
+            If Not IsDBNull(rigaSelezionata.Cells("Id").Value) AndAlso rigaSelezionata.Cells("Id").Value IsNot Nothing Then
+                IDCorrente = Convert.ToInt32(rigaSelezionata.Cells("Id").Value)
+            Else
+                IDCorrente = 0
+            End If
 
             MarcaTuboTextBox.Text = If(rigaSelezionata.Cells("Marca").Value?.ToString(), "")
             TipoTuboComboBox.Text = If(rigaSelezionata.Cells("TipoTubo").Value?.ToString(), "")
@@ -381,5 +400,60 @@
             e.Handled = True
         End If
     End Sub
+    ' Routine principale per lo scorrimento e la selezione visiva della riga
+    Private Sub SelezionaRigaTubo(indice As Integer)
+        Dim totaleRighe As Integer = LibTuboDataGridView.Rows.Cast(Of DataGridViewRow)().Count(Function(r) Not r.IsNewRow)
 
+        If totaleRighe = 0 Then Exit Sub
+
+        ' Limita l'indice tra 0 e l'ultimo record valido
+        If indice < 0 Then indice = 0
+        If indice >= totaleRighe Then indice = totaleRighe - 1
+
+        ' Trova la prima colonna visibile (evita l'errore sulla colonna Id nascosta)
+        Dim primaCellaVisibile As DataGridViewCell = Nothing
+        For Each cella As DataGridViewCell In LibTuboDataGridView.Rows(indice).Cells
+            If cella.Visible Then
+                primaCellaVisibile = cella
+                Exit For
+            End If
+        Next
+
+        ' Imposta il focus e la selezione sulla cella visibile trovata
+        If primaCellaVisibile IsNot Nothing Then
+            LibTuboDataGridView.ClearSelection()
+            LibTuboDataGridView.Rows(indice).Selected = True
+            LibTuboDataGridView.CurrentCell = primaCellaVisibile
+        End If
+
+        ' Richiama l'evento CellClick passandogli l'indice di colonna corretto
+        Dim colIndex As Integer = If(primaCellaVisibile IsNot Nothing, primaCellaVisibile.ColumnIndex, 0)
+        LibTuboDataGridView_CellClick(LibTuboDataGridView, New DataGridViewCellEventArgs(colIndex, indice))
+    End Sub
+
+    ' --- Eventi della ToolStrip ---
+
+    ' Primo record (Inizio)
+    Private Sub InizioTuboToolStripButton_Click(sender As Object, e As EventArgs) Handles InizioTuboToolStripButton.Click
+        SelezionaRigaTubo(0)
+    End Sub
+
+    ' Record successivo (Avanti)
+    Private Sub AvantiTuboToolStripButton_Click(sender As Object, e As EventArgs) Handles AvantiTuboToolStripButton.Click
+        ' Se nessun record è selezionato, partiamo da -1 per selezionare l'indice 0 (-1 + 1 = 0)
+        Dim indiceCorrente As Integer = If(LibTuboDataGridView.CurrentRow IsNot Nothing AndAlso CellaSelezionata, LibTuboDataGridView.CurrentRow.Index, -1)
+        SelezionaRigaTubo(indiceCorrente + 1)
+    End Sub
+
+    ' Record precedente (Indietro)
+    Private Sub IndietroTuboToolStripButton_Click(sender As Object, e As EventArgs) Handles IndietroTuboToolStripButton.Click
+        Dim indiceCorrente As Integer = If(LibTuboDataGridView.CurrentRow IsNot Nothing AndAlso CellaSelezionata, LibTuboDataGridView.CurrentRow.Index, 0)
+        SelezionaRigaTubo(indiceCorrente - 1)
+    End Sub
+
+    ' Ultimo record (Fine)
+    Private Sub FineTuboToolStripButton_Click(sender As Object, e As EventArgs) Handles FineTuboToolStripButton.Click
+        Dim totaleRighe As Integer = LibTuboDataGridView.Rows.Cast(Of DataGridViewRow)().Count(Function(r) Not r.IsNewRow)
+        SelezionaRigaTubo(totaleRighe - 1)
+    End Sub
 End Class

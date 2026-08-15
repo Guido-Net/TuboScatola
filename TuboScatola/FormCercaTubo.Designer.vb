@@ -86,7 +86,7 @@ Partial Class FormCercaTubo
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(383, 134)
+        ClientSize = New Size(379, 122)
         ControlBox = False
         Controls.Add(Label2)
         Controls.Add(Label1)

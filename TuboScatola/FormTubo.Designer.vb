@@ -108,8 +108,8 @@ Partial Class FormTubo
         ' RecordTuboToolStripLabel
         ' 
         RecordTuboToolStripLabel.Name = "RecordTuboToolStripLabel"
-        RecordTuboToolStripLabel.Size = New Size(22, 22)
-        RecordTuboToolStripLabel.Text = "-/-"
+        RecordTuboToolStripLabel.Size = New Size(12, 22)
+        RecordTuboToolStripLabel.Text = "/"
         RecordTuboToolStripLabel.ToolTipText = "Record selezionato"
         ' 
         ' AvantiTuboToolStripButton

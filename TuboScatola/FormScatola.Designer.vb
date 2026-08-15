@@ -139,8 +139,8 @@ Partial Class FormScatola
         ' RecordToolStripLabel
         ' 
         RecordToolStripLabel.Name = "RecordToolStripLabel"
-        RecordToolStripLabel.Size = New Size(28, 22)
-        RecordToolStripLabel.Text = "- / -"
+        RecordToolStripLabel.Size = New Size(12, 22)
+        RecordToolStripLabel.Text = "/"
         RecordToolStripLabel.ToolTipText = "Record selezionato"
         ' 
         ' AvantiScatolaToolStripButton

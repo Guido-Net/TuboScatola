@@ -301,7 +301,16 @@ Public Class FormScatola
         If e.RowIndex >= 0 Then
 
             Dim rigaSelezionata As DataGridViewRow = LibScatolaDataGridView.Rows(e.RowIndex)
-
+            ' Se l'utente clicca sulla riga con l'asterisco (riga vuota in basso), abortisce la selezione
+            If rigaSelezionata.IsNewRow Then
+                DeselezionaLibScatolaDataGridView()
+                DisabilitaCampiScatola()
+                SvuotaCampiScatola()
+                IDCorrente = 0
+                CellaSelezionata = False
+                NotificaScatolaToolStripStatusLabel.Text = "Selezione errata..."
+                Exit Sub
+            End If
             ' Riga selezionata
             CellaSelezionata = True
             RecordToolStripLabel.Text = e.RowIndex
@@ -743,5 +752,60 @@ Public Class FormScatola
         End If
 
 
+    End Sub
+    ' Routine di selezione e scorrimento riga per FormScatola
+    Private Sub SelezionaRigaScatola(indice As Integer)
+        Dim totaleRighe As Integer = LibScatolaDataGridView.Rows.Cast(Of DataGridViewRow)().Count(Function(r) Not r.IsNewRow)
+
+        If totaleRighe = 0 Then Exit Sub
+
+        ' Limita l'indice tra 0 e l'ultimo record valido
+        If indice < 0 Then indice = 0
+        If indice >= totaleRighe Then indice = totaleRighe - 1
+
+        ' Trova la prima colonna visibile (scavalca la colonna Id se nascosta)
+        Dim primaCellaVisibile As DataGridViewCell = Nothing
+        For Each cella As DataGridViewCell In LibScatolaDataGridView.Rows(indice).Cells
+            If cella.Visible Then
+                primaCellaVisibile = cella
+                Exit For
+            End If
+        Next
+
+        ' Imposta il focus e la selezione
+        If primaCellaVisibile IsNot Nothing Then
+            LibScatolaDataGridView.ClearSelection()
+            LibScatolaDataGridView.Rows(indice).Selected = True
+            LibScatolaDataGridView.CurrentCell = primaCellaVisibile
+        End If
+
+        ' Invoca il CellClick della griglia Scatole
+        Dim colIndex As Integer = If(primaCellaVisibile IsNot Nothing, primaCellaVisibile.ColumnIndex, 0)
+        LibScatolaDataGridView_CellClick(LibScatolaDataGridView, New DataGridViewCellEventArgs(colIndex, indice))
+    End Sub
+
+    ' --- Eventi Pulsanti Pulsantiera Scatola ---
+
+    ' Primo record (Inizio)
+    Private Sub InizioScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles InizioScatolaToolStripButton.Click
+        SelezionaRigaScatola(0)
+    End Sub
+
+    ' Record precedente (Indietro)
+    Private Sub IndietroScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles IndietroScatolaToolStripButton.Click
+        Dim indiceCorrente As Integer = If(LibScatolaDataGridView.CurrentRow IsNot Nothing AndAlso CellaSelezionata, LibScatolaDataGridView.CurrentRow.Index, 0)
+        SelezionaRigaScatola(indiceCorrente - 1)
+    End Sub
+
+    ' Record successivo (Avanti)
+    Private Sub AvantiScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles AvantiScatolaToolStripButton.Click
+        Dim indiceCorrente As Integer = If(LibScatolaDataGridView.CurrentRow IsNot Nothing AndAlso CellaSelezionata, LibScatolaDataGridView.CurrentRow.Index, -1)
+        SelezionaRigaScatola(indiceCorrente + 1)
+    End Sub
+
+    ' Ultimo record (Fine)
+    Private Sub FineScatolaToolStripButton_Click(sender As Object, e As EventArgs) Handles FineScatolaToolStripButton.Click
+        Dim totaleRighe As Integer = LibScatolaDataGridView.Rows.Cast(Of DataGridViewRow)().Count(Function(r) Not r.IsNewRow)
+        SelezionaRigaScatola(totaleRighe - 1)
     End Sub
 End Class
